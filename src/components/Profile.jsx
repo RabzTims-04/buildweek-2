@@ -15,7 +15,6 @@ class Profile extends Component {
 
         return (
            <Container fluid>
-
                <Row className="justify-content-between">
                    <Col xs={12} md={8}>
                        <ProfileCardOne/>
