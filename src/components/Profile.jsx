@@ -13,6 +13,21 @@ class Profile extends Component {
         profileData:[]
     }
 
+    editInfo =(editInfo)=>{
+        if(editInfo){
+            this.setState({
+                profileData: editInfo
+            })
+        }
+        
+    }
+
+    componentDidUpdate =(prevProps)=>{
+        if(prevProps.profileData?.name !== this.state.profileData?.name){
+            this.fetchData()
+        }
+    }
+
     componentDidMount =()=>{
         this.fetchData()
     }
@@ -48,7 +63,7 @@ class Profile extends Component {
                <Row className="justify-content-between profilePage">
                    <Col md={9} className="p-5 d-flex flex-column">
                        <div>
-                         <ProfileCardOne profileData={this.state.profileData}/>
+                         <ProfileCardOne editInfo={this.editInfo} profileData={this.state.profileData}/>
                        </div>
 
                        <div className="mt-3">

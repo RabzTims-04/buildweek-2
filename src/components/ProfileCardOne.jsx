@@ -8,6 +8,8 @@ import background from '../assets/backgroundCover.png'
 
 class ProfileCardOne extends Component {
 
+   
+
     render() {
 
         return (
@@ -46,7 +48,7 @@ class ProfileCardOne extends Component {
 
                             <Col className="text-right" md={4}>
 
-                               <EditModal/>
+                               <EditModal profileData={this.props.profileData} editInfo={this.props.editInfo}/>
                                
                             </Col>
                         </Row>

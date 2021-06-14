@@ -1,17 +1,26 @@
 import '../css/EditModal.css'
 import { FiEdit2 } from 'react-icons/fi';
 import { Modal, Button, Row, Col } from 'react-bootstrap'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import EditProfile from './EditProfile';
 
 const EditModal =(props)=>{
 
 const [show, setShow] = useState(false);
+const [profileData, setProfileData] = useState(null)
 const [newcomment, setNewComment] = useState([])
+const [info, setInfo] = useState(null)
+
+useEffect(()=>{
+    setProfileData(props.profileData)
+},[props.profileData])
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const editInfo = (val) =>{
+      setInfo(val)
+  }
 
   const updated =(data)=>{
       setNewComment(data)
@@ -34,7 +43,7 @@ const [newcomment, setNewComment] = useState([])
                             <Modal.Title>Edit intro</Modal.Title>                
                 </Modal.Header>
                 <Modal.Body className="modal-Body mt-4">
-                    <EditProfile/>               
+                    <EditProfile profileData={profileData} editInfo={props.editInfo}/>               
                 </Modal.Body>
                 <Modal.Footer>
                 <Button className="badge-pill savebtn" variant="primary" type="submit">
