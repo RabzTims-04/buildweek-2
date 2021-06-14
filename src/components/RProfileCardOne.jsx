@@ -1,9 +1,9 @@
 //FontAwesome
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import * as Icon from "@fortawesome/free-regular-svg-icons"
+// import * as Icon from "@fortawesome/free-regular-svg-icons"
 import * as SolidIcon from "@fortawesome/free-solid-svg-icons"
-import * as BrandIcon from "@fortawesome/free-brands-svg-icons"
+// import * as BrandIcon from "@fortawesome/free-brands-svg-icons"
 
 import {Container,Row,Col} from 'react-bootstrap'
 
