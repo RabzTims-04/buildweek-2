@@ -1,0 +1,10 @@
+.my-modal {
+    width: 60vw;   /* Occupy the 90% of the screen width */
+    max-width: 90vw;
+
+}
+
+.modal-Body{
+    height: 70vh;
+    overflow-y: scroll;
+}

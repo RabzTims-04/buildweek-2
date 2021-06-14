@@ -1,5 +1,3 @@
-
-
 import {Container,Row,Col} from 'react-bootstrap'
 import {Component} from 'react'
 
