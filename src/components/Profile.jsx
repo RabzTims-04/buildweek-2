@@ -2,8 +2,10 @@ import { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import '../css/Profile.css'
 import ProfileCardOne from './ProfileCardOne';
+import ProfileStrength from './ProfileStrength';
 import RProfileCardOne from './RProfileCardOne';
 import RProfileCardTwo from './RProfileCardTwo';
+import YourDashboard from './YourDashboard';
 
 class Profile extends Component {
 
@@ -44,8 +46,19 @@ class Profile extends Component {
            <Container fluid>
 
                <Row className="justify-content-between profilePage">
-                   <Col md={9} className="p-5">
-                       <ProfileCardOne profileData={this.state.profileData}/>
+                   <Col md={9} className="p-5 d-flex flex-column">
+                       <div>
+                         <ProfileCardOne profileData={this.state.profileData}/>
+                       </div>
+
+                       <div className="mt-3">
+                         <ProfileStrength/>
+                       </div>
+
+                       <div className="mt-3">
+                         <YourDashboard/>
+                       </div>
+                    
                    </Col>
 
                    <Col md={3}>

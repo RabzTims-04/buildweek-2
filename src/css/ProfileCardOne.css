@@ -4,6 +4,10 @@
     position: relative;
 }
 
+.card-body{
+    padding-bottom: 0!important;
+}
+
 .profilePic{
     position: absolute;
     border: 4px solid white;
@@ -21,6 +25,13 @@
 .btn1{
     width: 90px;
     padding: 0.2em 0;
+    background-color:#0c5cac!important;
+    border-color:#0c5cac!important ;
+}
+
+.btn1:hover{
+    background-color:#004182!important;
+    border-color:#004182!important ;
 }
 
 .btn2{
@@ -39,7 +50,11 @@
     height: 80px;
 }
 
-.cameraIcon{
-    position: absolute;
-    top:50%;
+.camerabtn{
+    border: 1px transparent grey!important;
+    border-radius: 50%;
+    background-color: #EBEBEB;
+    height: 30px;
+    width: 30px;
+    padding: 6px;
 }

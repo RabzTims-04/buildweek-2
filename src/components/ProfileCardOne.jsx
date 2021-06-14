@@ -15,13 +15,14 @@ class ProfileCardOne extends Component {
                 <Card className="rounded">
                     <Card.Img className="cardImg" variant="top" src={background} />
 
-                         <AiFillCamera style={{color:'blue', position:'absolute', right:'4%', top:'4%'}} size={20}/>
+                         <Link>
+                         <AiFillCamera className="camerabtn" style={{color:'blue', position:'absolute', right:'4%', top:'4%'}} size={20}/></Link>
                     
                     <Card.Body>                       
                         <img className="profilePic img-fluid" src={this.props.profileData.image} alt="profile-pic"/> 
                                          
                         <Row className='mb-4'>
-                            <Col md={8} className="d-flex flex-column cardBody mt-5">
+                            <Col md={8} className="d-flex flex-column cardBody mt-4">
                                 <h2>{this.props.profileData.name} {this.props.profileData.surname}</h2>
                                 <span>{this.props.profileData.bio}</span>
                                 <div className="d-inline mt-1">
@@ -43,13 +44,13 @@ class ProfileCardOne extends Component {
                                 </div>
                             </Col>                                                             
 
-                            <Col md={4}>
+                            <Col className="text-right" md={4}>
 
                                <EditModal/>
                                
                             </Col>
                         </Row>
-                        <Row>
+                       {/*  <Row>
                             <Col lg={6}>
                                 <Card.Footer className="text-muted d-flex">
                                     <Link style={{lineHeight:'1.2em'}}>
@@ -71,7 +72,7 @@ class ProfileCardOne extends Component {
                                     </Link>
                                 </Card.Footer>
                             </Col>
-                        </Row>
+                        </Row> */}
                     
                     </Card.Body>
                 </Card>

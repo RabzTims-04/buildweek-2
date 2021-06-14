@@ -18,11 +18,9 @@ const [newcomment, setNewComment] = useState([])
   } 
 
     return (
-        <>
-
-            <div onClick={handleShow} className="text-right">
-                <FiEdit2 size={20}/>
-            </div>
+        <>          
+            <FiEdit2 onClick={handleShow} className="editbtn" size={30}/>                
+            
        {/*   <img
                  id={props.imdbID}
                  onClick={()=> props.history.push('/details/' + props.imdbID)} 
@@ -39,6 +37,9 @@ const [newcomment, setNewComment] = useState([])
                     <EditProfile/>               
                 </Modal.Body>
                 <Modal.Footer>
+                <Button className="badge-pill savebtn" variant="primary" type="submit">
+                    <strong>Save</strong>
+                </Button>
 
                 </Modal.Footer>
             </Modal> 
