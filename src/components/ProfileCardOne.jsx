@@ -11,7 +11,7 @@ class ProfileCardOne extends Component {
     render() {
 
         return (
-
+          
             <Container>
                 <Jumbotron fluid>
                     <img className={"img-fluid"} style={{objectFit:'cover'}} src={background} alt="background"/>
