@@ -9,7 +9,7 @@ const Head = ()=>{
         
         <Navbar  expand="lg" id="navbar"  >
           <Navbar.Brand href="#home"className="center">
-              <img src="./assets/img/linkedin-logo.jpg" style={{width: 60, height: 40,}}/>
+              <img src="./assets/img/linkedin-logo.jpg" alt="logo" style={{width: 60, height: 40,}}/>
                   
 
           </Navbar.Brand>  

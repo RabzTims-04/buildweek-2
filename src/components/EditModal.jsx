@@ -30,14 +30,17 @@ const [newcomment, setNewComment] = useState([])
                  src={props.Poster} 
                  alt={props.Title}/> */}
 
-            <Modal show={show} onHide={handleClose}>
+            <Modal dialogClassName="my-modal" show={show} onHide={handleClose}>
 
                 <Modal.Header className="edit-modal" closeButton>                
                             <Modal.Title>Edit intro</Modal.Title>                
                 </Modal.Header>
-                <Modal.Body>
-                  <EditProfile/>               
+                <Modal.Body className="modal-Body mt-4">
+                    <EditProfile/>               
                 </Modal.Body>
+                <Modal.Footer>
+
+                </Modal.Footer>
             </Modal> 
         </>
     )
