@@ -7,15 +7,15 @@ const Head = ()=>{
     return(
         
         
-        <Navbar  expand="lg" id="navbar"  >
+        <Navbar  expand="lg" id="navbar" className="fixed-top"  >
           <Navbar.Brand href="#home"className="center">
-              <img src="./assets/img/linkedin-logo.jpg" alt="logo" style={{width: 60, height: 40,}}/>
+              <img src="./assets/img/linkdin.jpg" alt="logo" style={{width: 40, height: 40,}}/>
                   
 
           </Navbar.Brand>  
             <Form inline>
-      <FormControl type="text" placeholder="Search" className="search" />
-      
+      <FormControl type="text" placeholder="Search" className="search " />
+      {/* form-control-sm */}
     </Form>
     
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
