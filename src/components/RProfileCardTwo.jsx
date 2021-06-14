@@ -4,13 +4,13 @@ import {Component} from 'react'
 class RProfileCardTwo extends Component {
     render() { 
         return ( 
-            <Row className="p-3 w-100" style={{backgroundColor:"white",border:"solid 1px lightgrey",borderRadius:"15px"}}>
-                <Col>
-                <Row  style={{fontSize:"1em", color:"rgb(102,102,102)",fontWeight:"600"}}>Edit public profile & URL<span></span></Row>
+            <Container className="d-flex" style={{backgroundColor:"white",border:"solid 1px lightgrey",borderRadius:"15px"}}>
+             
+                <Col xs={12} style={{fontSize:"1em", color:"rgb(102,102,102)",fontWeight:"600"}}>Edit public profile & URL<span></span></Col>
                 <hr/>
-                <Row  style={{fontSize:"1em",color:"rgb(102,102,102)",fontWeight:"600"}}>Add profile in another language <span></span></Row>
-                </Col>
-            </Row>
+                <Col xs={12} style={{fontSize:"1em",color:"rgb(102,102,102)",fontWeight:"600"}}>Add profile in another language <span></span></Col>
+            
+            </Container>
          );
     }
 }
