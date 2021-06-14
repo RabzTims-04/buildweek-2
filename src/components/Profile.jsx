@@ -1,7 +1,13 @@
 import { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import '../css/Profile.css'
+/**Left Profile Cards */
 import ProfileCardOne from './ProfileCardOne';
+
+/**Right Profile Cards */
+ import RProfileCardOne from './RProfileCardOne'
+ import RProfileCardTwo from './RProfileCardTwo';
+
 
 class Profile extends Component {
 
@@ -40,18 +46,16 @@ class Profile extends Component {
 
         return (
            <Container fluid>
-
                <Row className="justify-content-between">
-                   <Col md={8} className="p-5">
-                       <ProfileCardOne profileData={this.state.profileData}/>
+                   <Col xs={12} md={8}>
+                       <ProfileCardOne/>
                    </Col>
 
-                   <Col md={4}>
-                       {/* Carls Components */}
-
+                   <Col xs={12} md={4}>
+                       <RProfileCardOne/>
+                       {/* <RProfileCardTwo/> */}
                    </Col>
                </Row>
-
            </Container>
         );
     }
