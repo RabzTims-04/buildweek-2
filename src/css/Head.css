@@ -1,0 +1,43 @@
+.vl {
+    border-left: 1px solid gray;
+    height: 50px;
+  }
+  svg{
+    position: relative;
+    width: 36px;
+    /* font-size: 50px; */
+    top: 3px;
+    line-height: 12px;
+    display: block;
+    width: 38px;
+    margin: 2px auto 4px auto;
+    top: 0;
+    line-height: 24px;
+    height:20px;
+  
+  }
+  .menuText{
+      font-size:small;
+      margin-left: 8px;
+      margin-right: 8px;
+      /* padding-top: 2px;
+      padding-bottom: 1px; */
+  }
+
+/* 
+  .center {
+      margin-left: 370px;
+      
+  }
+  .center2{
+      margin-right: 370px;
+  } */
+  .search{
+      
+  }
+
+  #navbar{
+      background-color:white;
+      padding-top: 1px;
+      padding-bottom:1px
+  }
