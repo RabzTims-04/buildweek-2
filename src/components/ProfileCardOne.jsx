@@ -10,7 +10,7 @@ class ProfileCardOne extends Component {
         return (
             <Container>
                 <Jumbotron fluid>
-                    <img style={{objectFit:'cover'}} src={background} alt="background"/>
+                    <img className={"img-fluid"}style={{objectFit:'cover'}} src={background} alt="background"/>
                     <h1>Hello, world!</h1>
                     <p>
                     This is a simple hero unit, a simple jumbotron-style component for calling
