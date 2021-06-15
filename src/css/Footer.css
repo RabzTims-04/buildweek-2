@@ -1,0 +1,60 @@
+.margin{
+    margin-left:140px;
+    margin-right:100px;
+}
+
+
+
+
+
+a{
+    color: rgb(94, 91, 91);
+    font-size:small;
+    font-weight:500;
+}
+a:hover{
+    color: rgb(67, 94, 201);
+    decoration: underline;
+}
+.copyRight{
+    margin-top:15px;
+    margin-bottom:15px;
+    font-size:10px;
+    color: rgb(103, 102, 102);
+}
+.footerIcon{
+    color: gray;
+    display:block;
+    margin-left: -70px;
+    margin-right: -55px;
+    
+}
+.language{
+    border: 2px solid gray;
+    
+    width:300px;
+    height: 30px;
+ 
+}
+.language:hover{
+    border: 2px solid rgb(67, 94, 201);
+}
+#dropdown-basic{
+    
+   font-size: 12px; 
+   color: grey;
+}
+.options{
+    font-size: 12px; 
+    color: grey;
+    background-color: lightgrey;
+}
+Col{
+    margin-left:-55px;
+}
+.last-col{
+    margin-left: -75px;
+}
+
+
+
