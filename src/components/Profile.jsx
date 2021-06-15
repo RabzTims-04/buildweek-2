@@ -83,9 +83,9 @@ class Profile extends Component {
                     
                    </Col>
 
-                   <Col md={4}>
-                       {/* <RProfileCardOne/>
-                       <RProfileCardTwo/> */}
+                   <Col md={4} className="pt-5 d-flex flex-column">
+                        <RProfileCardOne/>
+                       {/* <RProfileCardTwo/> */} 
                        <PeopleAlsoViewed />
                        <Learning />
                        {/* Carls Components */}

@@ -9,7 +9,7 @@ const Footer = ()=>{
 
     return(
         
-        <div className="container-fluid margin">
+        <div className="container margin">
             <Row>
                 <Col>
                 <img src="./assets/img/linkedin_logo.jpg" alt="logo" style={{width: 140, height: 30,}}/>

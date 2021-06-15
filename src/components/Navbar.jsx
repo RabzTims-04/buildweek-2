@@ -1,5 +1,5 @@
 import { Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
-import '../css/Head.css';
+import '../css/Head.css'
 
 
 
@@ -27,7 +27,7 @@ const Head = ()=>{
               width='16'
               height='16'
               fill='currentColor'
-              class='bi bi-house-door-fill'
+              className='bi bi-house-door-fill'
               viewBox='0 0 16 16'
             >
               <path d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z' />
@@ -40,7 +40,7 @@ const Head = ()=>{
               width='16'
               height='16'
               fill='currentColor'
-              class='bi bi-people-fill'
+              className='bi bi-people-fill'
               viewBox='0 0 16 16'
             >
               <path d='M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' />
@@ -58,7 +58,7 @@ const Head = ()=>{
               width='16'
               height='16'
               fill='currentColor'
-              class='bi bi-briefcase-fill'
+              className='bi bi-briefcase-fill'
               viewBox='0 0 16 16'
             >
               <path d='M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z' />
@@ -72,7 +72,7 @@ const Head = ()=>{
               width='16'
               height='16'
               fill='currentColor'
-              class='bi bi-chat-right-dots-fill'
+              className='bi bi-chat-right-dots-fill'
               viewBox='0 0 16 16'
             >
               <path d='M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 1 0-2 1 1 0 0 1 0 2z' />
@@ -85,7 +85,7 @@ const Head = ()=>{
               width='16'
               height='16'
               fill='currentColor'
-              class='bi bi-bell-fill'
+              className='bi bi-bell-fill'
               viewBox='0 0 16 16'
             >
               <path d='M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z' />
@@ -101,7 +101,7 @@ const Head = ()=>{
                   width='16'
                   height='16'
                   fill='currentColor'
-                  class='bi bi-person-circle'
+                  className='bi bi-person-circle'
                   viewBox='0 0 16 16'
                 >
                   <path d='M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z' />
@@ -136,7 +136,7 @@ const Head = ()=>{
                   width='16'
                   height='16'
                   fill='currentColor'
-                  class='bi bi-grid-3x3-gap-fill'
+                  className='bi bi-grid-3x3-gap-fill'
                   viewBox='0 0 16 16'
                 >
                   <path d='M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V2zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-2zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-2z' />
