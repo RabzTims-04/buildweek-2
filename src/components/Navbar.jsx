@@ -1,24 +1,21 @@
 import { Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
-import '../css/Head.css'
+import '../css/Head.css';
 
-
-
-const Head = ()=>{
-
-    return(
-        
-        
-        <Navbar  expand="lg" id="navbar" className="fixed-top"  >
-          <Navbar.Brand href="#home"className="center">
-              <img src="./assets/img/linkdin.jpg" alt="logo" style={{width: 40, height: 40,}}/>
-                  
-
-          </Navbar.Brand>  
-            <Form inline>
-      <FormControl type="text" placeholder="Search" className="search " />
-      {/* form-control-sm */}
-    </Form>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+const Head = () => {
+  return (
+    <Navbar expand='lg' id='navbar' className='fixed-top'>
+      <Navbar.Brand href='#home' className='center'>
+        <img
+          src='./assets/img/linkdin.jpg'
+          alt='logo'
+          style={{ width: 40, height: 40 }}
+        />
+      </Navbar.Brand>
+      <Form inline>
+        <FormControl type='text' placeholder='Search' className='search ' />
+        {/* form-control-sm */}
+      </Form>
+      <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ml-auto'>
           <Nav.Link href='#home' className='menuText'>
@@ -109,7 +106,6 @@ const Head = ()=>{
                     fill-rule='evenodd'
                     d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z'
                   />
-
                 </svg>
                 Me
               </span>
