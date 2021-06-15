@@ -3,7 +3,7 @@ import '../css/PeopleAlsoViewed.css';
 import { Link } from 'react-router-dom'
 const PeopleAlsoViewed = () => {
   const [Profiles, setProfiles] = useState([]);
-  console.log(Profiles);
+  //console.log(Profiles);
   useEffect(() => {
     fetch('https://striveschool-api.herokuapp.com/api/profile/', {
       method: 'GET',
@@ -17,7 +17,7 @@ const PeopleAlsoViewed = () => {
   }, []);
   return (
     <div className='people_also_viewed'>
-      <p style={{fontSize:'1.5em', fontWeight:'500'}}>People also viewed</p>
+      <p style={{ fontSize: '1.5em', fontWeight: '500' }}>People also viewed</p>
       {Profiles.slice(3, 10).map((p) => (
         <div className='profils_container' key={p._id}>
           <img src={p.image} alt={p.name + ' ' + p.surname} />

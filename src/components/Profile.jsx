@@ -4,15 +4,16 @@ import '../css/Profile.css';
 import ProfileCardOne from './ProfileCardOne';
 import ProfileStrength from './ProfileStrength';
 import RProfileCardOne from './RProfileCardOne';
-import RProfileCardTwo from './RProfileCardTwo';
 import YourDashboard from './YourDashboard';
 import PeopleAlsoViewed from './PeopleAlsoViewed';
 import Learning from './Learning';
 import Experience from './Experience'
+import EditExp from './EditExp';
 /* import Dashboard from './Dashboard'; */
 import Messaging from './Messaging';
 
 class Profile extends Component {
+
 
     state={
         profileData:[]
@@ -47,29 +48,31 @@ class Profile extends Component {
     componentDidMount =()=>{
         this.fetchData()
     }
+  
+  
+  fetchData = async () => {
+    try {
+      const url = 'https://striveschool-api.herokuapp.com/api/profile/me';
+      const key =
+        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o';
 
-    fetchData = async ()=>{
-        try {
-            const url = 'https://striveschool-api.herokuapp.com/api/profile/me'
-            const key= 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
+      const response = await fetch(url, {
+        headers: {
+          Authorization: key,
+        },
+      });
+      const data = await response.json();
+      if (response.ok) {
+        //console.log(data);
+        this.setState({
+          profileData: data,
+        });
+      }
+    } catch (error) {
+      console.log(error);
 
-            const response = await fetch(url,{
-                headers:{
-                    'Authorization': key
-                }
-            })
-            const data = await response.json()
-            if(response.ok){
-                console.log(data); 
-                this.setState({
-                    profileData:data
-                })               
-            }
-            
-        } catch (error) {
-            console.log(error);
-        }
     }
+  };
 
     render() {
 
@@ -84,6 +87,7 @@ class Profile extends Component {
 
                        <div className="mt-3">
                          <ProfileStrength/>
+                           <EditExp />
                        </div>
 
                        <div className="mt-3">
@@ -110,7 +114,7 @@ class Profile extends Component {
 
            </Container>
         );
-    }
+  }
 }
 
 export default Profile;

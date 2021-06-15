@@ -1,9 +1,10 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom'
-import { Form, Col, Button } from 'react-bootstrap'
-import '../css/EditProfile.css'
+import { Link } from 'react-router-dom';
+import { Form, Col, Button } from 'react-bootstrap';
+import '../css/EditProfile.css';
 
 class EditProfile extends Component {
+
 
     state={
         edit:{
@@ -208,6 +209,6 @@ class EditProfile extends Component {
 
         );
     }
-}
+  };
 
-export default EditProfile
+export default EditProfile;

@@ -2,17 +2,16 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillCamera } from 'react-icons/ai';
 import EditModal from './EditModal';
-import { Jumbotron, Container, Button, Card, Row, Col } from 'react-bootstrap';
+import { Card, Row, Col } from 'react-bootstrap';
 import '../css/ProfileCardOne.css';
 import background from '../assets/backgroundCover.png';
 
 class ProfileCardOne extends Component {
-
   render() {
-
     return (
       <Card className='rounded'>
         <Card.Img className='cardImg' variant='top' src={background} />
+
 
                          <Link>
                          <AiFillCamera className="camerabtn" style={{color:'blue', position:'absolute', right:'4%', top:'4%'}} size={20}/></Link>
@@ -45,8 +44,8 @@ class ProfileCardOne extends Component {
                     </Card.Body>
                 </Card>
                  );
-                 }
+               }
 
-                }
+             }
 
 export default ProfileCardOne;
