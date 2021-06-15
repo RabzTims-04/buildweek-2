@@ -7,35 +7,49 @@ import RProfileCardOne from './RProfileCardOne';
 import YourDashboard from './YourDashboard';
 import PeopleAlsoViewed from './PeopleAlsoViewed';
 import Learning from './Learning';
+import Experience from './Experience'
 import EditExp from './EditExp';
 /* import Dashboard from './Dashboard'; */
 import Messaging from './Messaging';
 
 class Profile extends Component {
-  state = {
-    profileData: [],
-  };
 
-  editInfo = (editInfo) => {
-    if (editInfo) {
-      this.setState({
-        profileData: editInfo,
-      });
+
+    state={
+        profileData:[]
     }
-  };
 
-  componentDidUpdate = (prevProps) => {
-    if (prevProps.profileData?.name !== this.state.profileData?.name) {
-      this.fetchData();
-    } else {
-      console.log('not changed');
+    editInfo =(editInfo)=>{
+        if(editInfo){
+            this.setState({
+                profileData: editInfo
+            })
+        }
+        
     }
-  };
 
-  componentDidMount = () => {
-    this.fetchData();
-  };
+    componentDidUpdate =(prevProps, prevState)=>{
+        console.log('state',prevState)
+        if((prevState.profileData.name !== this.state.profileData.name)
+        ||(prevState.profileData.surname !== this.state.profileData.surname)
+        ||(prevState.profileData.email !== this.state.profileData.email)
+        ||(prevState.profileData.username !== this.state.profileData.username)
+        ||(prevState.profileData.title !== this.state.profileData.title)
+        ||(prevState.profileData.bio !== this.state.profileData.bio)
+        ||(prevState.profileData.area !== this.state.profileData.area)
+        ||(prevState.profileData.image !== this.state.profileData.image)
+        ){
+            this.fetchData()
+        }else{
+            console.log('not changed');
+        }
+    }
 
+    componentDidMount =()=>{
+        this.fetchData()
+    }
+  
+  
   fetchData = async () => {
     try {
       const url = 'https://striveschool-api.herokuapp.com/api/profile/me';
@@ -56,43 +70,50 @@ class Profile extends Component {
       }
     } catch (error) {
       console.log(error);
+
     }
   };
 
-  render() {
-    return (
-      <Container fluid>
-        <Row className='justify-content-between profilePage'>
-          <Col md={8} className='pt-5 d-flex flex-column'>
-            <div>
-              <ProfileCardOne
-                editInfo={this.editInfo}
-                profileData={this.state.profileData}
-              />
-            </div>
+    render() {
 
-            <div className='mt-3'>
-              <ProfileStrength />
-              <EditExp />
-            </div>
+        return (
+           <Container fluid>
 
-            <div className='mt-3'>
-              <YourDashboard />
-              {/* <Dashboard /> */}
-            </div>
-          </Col>
+               <Row className="justify-content-between profilePage">
+                   <Col md={8} className="py-5 d-flex flex-column">
+                       <div>
+                         <ProfileCardOne editInfo={this.editInfo} profileData={this.state.profileData}/>
+                       </div>
 
-          <Col md={4} className='pt-5 d-flex flex-column'>
-            <RProfileCardOne />
-            {/* <RProfileCardTwo/> */}
-            <PeopleAlsoViewed />
-            <Learning />
-            {/* Carls Components */}
-          </Col>
-        </Row>
-        <Messaging />
-      </Container>
-    );
+                       <div className="mt-3">
+                         <ProfileStrength/>
+                           <EditExp />
+                       </div>
+
+                       <div className="mt-3">
+                         <YourDashboard/>
+                         {/* <Dashboard /> */}
+                       </div>
+
+                       <div className="mt-3">
+                          <Experience/>
+                       </div>
+                    
+                   </Col>
+
+                   <Col md={4} className="pt-5 d-flex flex-column">
+                        <RProfileCardOne/>
+                       {/* <RProfileCardTwo/> */} 
+                       <PeopleAlsoViewed />
+                       <Learning />
+                       {/* Carls Components */}
+
+                   </Col>
+               </Row>
+               <Messaging />
+
+           </Container>
+        );
   }
 }
 

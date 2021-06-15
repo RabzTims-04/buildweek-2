@@ -1,51 +1,76 @@
 import '../css/EditModal.css';
 import { FiEdit2 } from 'react-icons/fi';
-import { Modal, Button } from 'react-bootstrap';
-import { useState, useEffect } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Modal, Button, Row, Col } from 'react-bootstrap'
+import { Component } from 'react'
+import { withRouter } from 'react-router-dom'
 import EditProfile from './EditProfile';
 
-const EditModal = (props) => {
-  const [show, setShow] = useState(false);
-  const [profileData, setProfileData] = useState(null);
+class EditModal extends Component{
 
-  useEffect(() => {
-    setProfileData(props.profileData);
-  }, [props.profileData]);
+        state={
+            show:false,
+            profileData:null,
+            submitbtn:null
+        }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+        componentDidUpdate =(prevProps)=>{
+            if(prevProps.profileData !== this.props.profileData){
+                this.setState({
+                    ...this.state,
+                    profileData:this.props.profileData
+                }) 
+            }                                   
+        }
 
-  return (
-    <>
-      <FiEdit2 onClick={handleShow} className='editbtn' size={30} />
+        submit =(val)=>{
+            this.setState({
+                ...this.state,
+                submitbtn:val
+            })
+        }
 
-      {/*   <img
-                 id={props.imdbID}
-                 onClick={()=> props.history.push('/details/' + props.imdbID)} 
-                 className="imagetransition img-fluid image-height" 
-                 src={props.Poster} 
-                 alt={props.Title}/> */}
+        handleClose =()=>{
+            this.setState({
+                ...this.state,
+                show:false
+            })
+        }
 
-      <Modal dialogClassName='my-modal' show={show} onHide={handleClose}>
-        <Modal.Header className='edit-modal' closeButton>
-          <Modal.Title>Edit intro</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className='modal-Body mt-4'>
-          <EditProfile profileData={profileData} editInfo={props.editInfo} />
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            className='badge-pill savebtn'
-            variant='primary'
-            type='submit'
-          >
-            <strong>Save</strong>
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    </>
-  );
-};
+        handleShow =()=>{
+            this.setState({
+                ...this.state,
+                show:true
+            })
+        }
 
-export default withRouter(EditModal);
+    render(){      
+
+        return(
+
+        <>          
+            <FiEdit2 id="editbtn" onClick={this.handleShow} size={30}/>                
+
+            <Modal dialogClassName="my-modal" show={this.state.show} onHide={this.handleClose}>
+
+                <Modal.Header className="edit-modal" closeButton>                
+                            <Modal.Title>Edit intro</Modal.Title>                
+                </Modal.Header>
+                <Modal.Body className="modal-Body mt-4">
+                    <EditProfile profileData={this.state.profileData} editInfo={this.props.editInfo} submit={this.submit}/>               
+                </Modal.Body>
+                <Modal.Footer>
+               {/*  <Button 
+                className="badge-pill savebtn" 
+                variant="primary" 
+                type="submit">
+                    <strong>Save</strong>
+                </Button> */}
+
+                </Modal.Footer>
+            </Modal> 
+        </>
+    )
+  }
+}
+
+export default withRouter(EditModal)

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../css/PeopleAlsoViewed.css';
+import { Link } from 'react-router-dom'
 const PeopleAlsoViewed = () => {
   const [Profiles, setProfiles] = useState([]);
   //console.log(Profiles);
@@ -21,9 +22,11 @@ const PeopleAlsoViewed = () => {
         <div className='profils_container' key={p._id}>
           <img src={p.image} alt={p.name + ' ' + p.surname} />
           <div className='profile_info'>
-            <div className='name'>{p.name + ' ' + p.surname}</div>
-            <div className='speciality'>{p.title}</div>
-            <button className='connect_button'>Connect</button>
+            <Link>
+                <div className='name'>{p.name + ' ' + p.surname}</div>
+                <div className='speciality text-muted' style={{fontSize:'0.8em'}}>{p.title}</div>
+            </Link>
+            <button className='connect_button px-2 py-0 mt-1'>Connect</button>
           </div>
         </div>
       ))}
