@@ -1,8 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { AiFillCamera } from 'react-icons/ai'
-import EditModal from './EditModal' 
-import { Jumbotron, Container, Button, Card, Row, Col } from 'react-bootstrap';
+import { Container, Card, Row, Col } from 'react-bootstrap';
 import '../css/YourDashboard.css'
 
 class YourDashboard extends Component {

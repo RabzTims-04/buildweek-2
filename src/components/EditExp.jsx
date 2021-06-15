@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { FiEdit2 } from 'react-icons/fi';
 import '../css/EditExp.css';
 export class EditExp extends Component {
   state = {
@@ -52,6 +51,32 @@ export class EditExp extends Component {
     }
   };
 
+  deleteExp = async (e)=>{
+      const url = 'https://striveschool-api.herokuapp.com/api/profile/60c72233291930001560aba1/experiences/' + this.props.id;
+      const key =
+      'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o';
+
+      try {
+        const response = await fetch(url, {
+            method: 'DELETE',
+            headers: {
+              'Authorization': key
+            }
+        })
+        if(response.ok){
+          this.props.filter(this.props.id)
+          alert('Are you sure you want to delete?')
+        }
+        else{
+          console.log('error');
+        }
+        
+      } catch (error) {
+        console.log(error);
+      }
+
+  }
+
   handleClose =()=>{
     this.setState({
         ...this.state,
@@ -76,11 +101,14 @@ handleShow =()=>{
 
         {/* <FiEdit2 id="edit2btn"  size={30}/>  */}
         <Modal dialogClassName="my-modal" show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
+          <Modal.Header closeButton onClick={(e) => {
+                  this.editExp(e)
+                  this.handleClose()                  
+                }}>
             <Modal.Title>Edit experience</Modal.Title>
           </Modal.Header>
 
-          <Modal.Body>
+          <Modal.Body className="modal-Body">
             <Form>
               <Form.Group className='mb-3'>
                 <Form.Label>Role *</Form.Label>
@@ -93,7 +121,7 @@ handleShow =()=>{
                 />
               </Form.Group>
 
-              <Form.Group className='mb-3'>
+            {/*   <Form.Group className='mb-3'>
                 <Form.Label className='text-muted'>Type *</Form.Label>
                 <Form as='select'>
                   <option>Intership</option>
@@ -104,7 +132,7 @@ handleShow =()=>{
                 <Form.Text className='text-muted'>
                   Country-specific employment types
                 </Form.Text>
-              </Form.Group>
+              </Form.Group> */}
               <Form.Group>
                 <Form.Label>Company *</Form.Label>
                 <Form.Control
@@ -145,6 +173,7 @@ handleShow =()=>{
               </Form.Group>
 
               <Form.Group>
+              <Form.Label>Description</Form.Label>
                 <Form.Control
                   as='textarea'
                   placeholder='Leave description here'
@@ -153,59 +182,33 @@ handleShow =()=>{
                   onChange={(e) => this.StoreChange(e)}
                 />
               </Form.Group>
-              {/* <div className="d-flex justify-content-between"> 
-                <div>
-                <Button
-                onClick={(e) => {
-                  this.editExp(e)
-                  this.handleClose()                  
-                }}
-                variant='danger'
-                
-              >
-                Close
-              </Button>
-                </div>
-                <div>
-                <Button
-                onClick={(e) => {
-                  this.editExp(e);
-                }}
-                variant='primary'
-                
-              >
-                Submit
-              </Button>
-                </div>
-              </div> */}
             </Form>
           </Modal.Body>
           <Modal.Footer className="d-flex justify-content-between">
            
                 <div>
-                <Button
-                onClick={(e) => {
-                  this.editExp(e)
-                  this.handleClose()                  
-                }}
-                variant='danger'
-                
-              >
-                Close
-              </Button>
+                    <Button
+                    className="badge-pill"
+                    onClick={(e) => {
+                      this.deleteExp(e)                 
+                    }}
+                    variant='danger'                    
+                  >
+                    Delete
+                  </Button>
                 </div>
+
                 <div>
-                <Button
-                onClick={(e) => {
-                  this.editExp(e);
-                }}
-                variant='primary'
-                
-              >
-                Submit
-              </Button>
-                </div>
-             
+                    <Button
+                    className="badge-pill"
+                    onClick={(e) => {
+                      this.editExp(e);
+                    }}
+                    variant='primary'                    
+                  >
+                    Submit
+                  </Button>
+                </div>            
 
           </Modal.Footer>
         </Modal>
