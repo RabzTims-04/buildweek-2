@@ -1,9 +1,10 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom'
-import { Form, Col, Button } from 'react-bootstrap'
-import '../css/EditProfile.css'
+import { Link } from 'react-router-dom';
+import { Form, Col, Button } from 'react-bootstrap';
+import '../css/EditProfile.css';
 
 class EditProfile extends Component {
+
 
     state={
         edit:{
@@ -44,7 +45,7 @@ class EditProfile extends Component {
              const editedInfo = await response.json()
              if(response.ok){
                  console.log(editedInfo);
-                 this.props.editInfo = editedInfo
+                 this.props.editInfo(editedInfo)
                  alert('edit done')
                  this.setState({
                     ...this.state.edit
@@ -196,15 +197,18 @@ class EditProfile extends Component {
                         rows={2} />
                     </Form.Group>
                 </Col>
+               <div className="text-right">
                 <Button
-                    onClick={(e) =>this.editInfo(e)} 
-                    variant="primary">
-                        Save
-                </Button>
+                        className="badge-pill savebtn"
+                        onClick={(e) =>this.editInfo(e)} 
+                        variant="primary">
+                            <strong>Save</strong>
+                    </Button>
+               </div>
           </Form>
 
         );
     }
-}
+  };
 
-export default EditProfile
+export default EditProfile;

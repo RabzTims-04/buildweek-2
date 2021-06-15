@@ -1,15 +1,16 @@
 .margin{
-    margin-left:100px;
-     margin-right:100px; 
+    margin: left 100px;
+     /* margin-right:120px;  */
+     
 }
 
 a{
-    color: rgb(94, 91, 91);
+    color: rgb(94, 91, 91) !important;
     font-size:small;
     font-weight:500;
 }
 a:hover{
-    color: rgb(67, 94, 201);
+    color: rgb(67, 94, 201)!important;
     decoration: underline;
 }
 .copyRight{
@@ -21,8 +22,8 @@ a:hover{
 .footerIcon{
     color: gray;
     display:block;
-    /* margin-left: -70px;
-    margin-right: -55px; */
+    margin-left: -55px;
+    margin-right: -35px;
     
 }
 .language{

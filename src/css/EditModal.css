@@ -14,12 +14,12 @@
     background-color: #0A66C2;
 }
 
-.editbtn{
+#editbtn{
     padding: 8px;
     height: 40px;
 }
 
-.editbtn:hover{
+#editbtn:hover{
     border: 1px transparent grey;
     border-radius: 50%;
     background-color: #EBEBEB;

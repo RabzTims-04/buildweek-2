@@ -1,60 +1,76 @@
-import '../css/EditModal.css'
+import '../css/EditModal.css';
 import { FiEdit2 } from 'react-icons/fi';
 import { Modal, Button, Row, Col } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import EditProfile from './EditProfile';
 
-const EditModal =(props)=>{
+class EditModal extends Component{
 
-const [show, setShow] = useState(false);
-const [profileData, setProfileData] = useState(null)
-const [newcomment, setNewComment] = useState([])
-const [info, setInfo] = useState(null)
+        state={
+            show:false,
+            profileData:null,
+            submitbtn:null
+        }
 
-useEffect(()=>{
-    setProfileData(props.profileData)
-},[props.profileData])
+        componentDidUpdate =(prevProps)=>{
+            if(prevProps.profileData !== this.props.profileData){
+                this.setState({
+                    ...this.state,
+                    profileData:this.props.profileData
+                }) 
+            }                                   
+        }
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const editInfo = (val) =>{
-      setInfo(val)
-  }
+        submit =(val)=>{
+            this.setState({
+                ...this.state,
+                submitbtn:val
+            })
+        }
 
-  const updated =(data)=>{
-      setNewComment(data)
-  } 
+        handleClose =()=>{
+            this.setState({
+                ...this.state,
+                show:false
+            })
+        }
 
-    return (
+        handleShow =()=>{
+            this.setState({
+                ...this.state,
+                show:true
+            })
+        }
+
+    render(){      
+
+        return(
+
         <>          
-            <FiEdit2 onClick={handleShow} className="editbtn" size={30}/>                
-            
-       {/*   <img
-                 id={props.imdbID}
-                 onClick={()=> props.history.push('/details/' + props.imdbID)} 
-                 className="imagetransition img-fluid image-height" 
-                 src={props.Poster} 
-                 alt={props.Title}/> */}
+            <FiEdit2 id="editbtn" onClick={this.handleShow} size={30}/>                
 
-            <Modal dialogClassName="my-modal" show={show} onHide={handleClose}>
+            <Modal dialogClassName="my-modal" show={this.state.show} onHide={this.handleClose}>
 
                 <Modal.Header className="edit-modal" closeButton>                
                             <Modal.Title>Edit intro</Modal.Title>                
                 </Modal.Header>
                 <Modal.Body className="modal-Body mt-4">
-                    <EditProfile profileData={profileData} editInfo={props.editInfo}/>               
+                    <EditProfile profileData={this.state.profileData} editInfo={this.props.editInfo} submit={this.submit}/>               
                 </Modal.Body>
                 <Modal.Footer>
-                <Button className="badge-pill savebtn" variant="primary" type="submit">
+               {/*  <Button 
+                className="badge-pill savebtn" 
+                variant="primary" 
+                type="submit">
                     <strong>Save</strong>
-                </Button>
+                </Button> */}
 
                 </Modal.Footer>
             </Modal> 
         </>
     )
-
+  }
 }
 
 export default withRouter(EditModal)

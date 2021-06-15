@@ -1,7 +1,7 @@
 .people_also_viewed {
   background: white;
   border-radius: 10px;
-  padding: 20px 40px;
+  padding: 20px 30px;
   max-width: 100%;
   margin: 0;
   margin-top: 45px;
@@ -14,12 +14,13 @@
   padding: 0 20px;
 }
 .profils_container > img {
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
 }
 .name {
   font-weight: bold;
+  font-size: small;
 }
 .connect_button {
   color: gray;
