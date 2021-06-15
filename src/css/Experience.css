@@ -1,0 +1,9 @@
+.card{
+
+    border-radius: 12px!important;
+    position: relative;
+}
+
+.card-body{
+    padding-bottom: 0!important;
+}

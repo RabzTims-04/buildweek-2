@@ -8,6 +8,7 @@ import RProfileCardTwo from './RProfileCardTwo';
 import YourDashboard from './YourDashboard';
 import PeopleAlsoViewed from './PeopleAlsoViewed';
 import Learning from './Learning';
+import Experience from './Experience'
 /* import Dashboard from './Dashboard'; */
 import Messaging from './Messaging';
 
@@ -78,6 +79,11 @@ class Profile extends Component {
 
                        <div className="mt-3">
                          <YourDashboard/>
+                         {/* <Dashboard /> */}
+                       </div>
+
+                       <div className="mt-3">
+                          <Experience/>
                          {/* <Dashboard /> */}
                        </div>
                     
