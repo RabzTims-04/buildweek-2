@@ -12,7 +12,7 @@ class EditProfile extends Component {
                 <Form.Group className="d-flex justify-content-between" controlId="exampleForm.ControlInput1">
                     <div>
                          <Form.Label className="text-muted">First Name *</Form.Label>
-                         <Form.Control type="text"/>
+                         <Form.Control className="w-100" type="text"/>
                     </div>
              
                     <div>
