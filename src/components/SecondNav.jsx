@@ -15,7 +15,7 @@ const SecondNav =()=>{
 
     return(
 
-        <Navbar data-aos="slide-in-top" className=" container-fluid justify-content-between" id='margin'>
+        <Navbar data-aos="slide-in-top" className=" container-fluid d-none d-md-flex justify-content-between" id='margin'>
            
         <Form inline id="container">
             <InputGroup>
@@ -37,7 +37,7 @@ const SecondNav =()=>{
         <Form inline id="container1">
             
             <Button id="more"type="submit" style={{borderRadius:"25px",border:'1px solid black',marginLeft:'10px',marginRight:'10px'}}>More</Button>
-            <Button id="more"type="submit"style={{borderRadius:"25px",border:'1px solid black',marginLeft:'10px',marginRight:'10px'}}>Add section</Button>
+            <Button id="addsection"type="submit"style={{borderRadius:"25px",border:'1px solid black',marginLeft:'10px',marginRight:'10px'}}>Add section</Button>
             <Button  classNames="btn btn-primary"type="submit"style={{borderRadius:"25px",marginLeft:'10px',marginRight:'10px'}} >Open to</Button>
         </Form>
         
