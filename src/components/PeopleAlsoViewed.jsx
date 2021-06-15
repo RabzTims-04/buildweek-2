@@ -16,7 +16,7 @@ const PeopleAlsoViewed = () => {
   }, []);
   return (
     <div className='people_also_viewed'>
-      <h3>people also viewed</h3>
+      <p style={{fontSize:'1.5em', fontWeight:'500'}}>People also viewed</p>
       {Profiles.slice(3, 10).map((p) => (
         <div className='profils_container' key={p._id}>
           <img src={p.image} alt={p.name + ' ' + p.surname} />
