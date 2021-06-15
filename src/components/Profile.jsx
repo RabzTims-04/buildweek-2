@@ -27,8 +27,17 @@ class Profile extends Component {
         
     }
 
-    componentDidUpdate =(prevProps)=>{
-        if(prevProps.profileData?.name !== this.state.profileData?.name){
+    componentDidUpdate =(prevProps, prevState)=>{
+        console.log('state',prevState)
+        if((prevState.profileData.name !== this.state.profileData.name)
+        ||(prevState.profileData.surname !== this.state.profileData.surname)
+        ||(prevState.profileData.email !== this.state.profileData.email)
+        ||(prevState.profileData.username !== this.state.profileData.username)
+        ||(prevState.profileData.title !== this.state.profileData.title)
+        ||(prevState.profileData.bio !== this.state.profileData.bio)
+        ||(prevState.profileData.area !== this.state.profileData.area)
+        ||(prevState.profileData.image !== this.state.profileData.image)
+        ){
             this.fetchData()
         }else{
             console.log('not changed');
@@ -84,7 +93,6 @@ class Profile extends Component {
 
                        <div className="mt-3">
                           <Experience/>
-                         {/* <Dashboard /> */}
                        </div>
                     
                    </Col>

@@ -19,7 +19,7 @@ class Experience extends Component {
             ]
         }
 
-    componentDidUpdate =()=>{
+    componentDidMount =()=>{
         this.experienceFetch()
     }
 
@@ -86,7 +86,7 @@ class Experience extends Component {
                                                    PUT
                                                </div>
                                             </div>
-                                            <p className=" text-muted m-0">{exp.company}</p>
+                                            <p className="text-muted m-0">{exp.company}</p>
                                             <p className="light-text  m-0">{exp.startDate}</p>
                                             <p className="light-text  m-0">{exp.area}</p>                                            
                                         </Link>

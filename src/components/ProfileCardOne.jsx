@@ -20,7 +20,7 @@ class ProfileCardOne extends Component {
                     <Card.Body>                       
                         <img className="profilePic img-fluid" src={this.props.profileData.image} alt="profile-pic"/> 
                                          
-                        <Row className='mb-4'>
+                        <Row className='mb-4 justify-content-between'>
                             <Col md={8} className="d-flex flex-column cardBody mt-4">
                                 <h2>{this.props.profileData.name} {this.props.profileData.surname}</h2>
                                 <span>{this.props.profileData.bio}</span>
@@ -28,19 +28,16 @@ class ProfileCardOne extends Component {
                                     <span className="mr-2 text-muted">{this.props.profileData.area} .</span>
                                     <Link style={{color:'blue'}}>
                                         <span>Contact info</span>
-                                    </Link> 
-                                                                        
+                                    </Link>                                   
                                 </div>
-
-              <Link style={{ color: 'blue' }} className='mt-1'>
-                <p>19 connections</p>
-              </Link>
-
+                                <Link style={{ color: 'blue' }} className='mt-1'>
+                                  <p>19 connections</p>
+                                </Link>
                             </Col>
-                            <Col className="text-right" md={4}>
 
+                            <Col className="text-right" md={4}>
                                <EditModal profileData={this.props.profileData} editInfo={this.props.editInfo}/>
-                               </Col>
+                            </Col>
                                
                         
                         </Row>
