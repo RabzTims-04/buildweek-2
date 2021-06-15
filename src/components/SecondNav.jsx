@@ -1,13 +1,21 @@
 
 import {Navbar,Form,FormControl,Button,InputGroup,Row, Col} from 'react-bootstrap'
 import '../css/SecondNav.css'
-
-
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from 'react'
 
 const SecondNav =()=>{
+
+    useEffect(()=>{
+           AOS.init({
+            mirror: true            
+          });
+    },[])
+
     return(
 
-        <Navbar className=" container-fluid justify-content-between fixed-top"id='margin'>
+        <Navbar data-aos="slide-in-top" className=" container-fluid justify-content-between" id='margin'>
            
         <Form inline id="container">
             <InputGroup>
@@ -21,7 +29,7 @@ const SecondNav =()=>{
                 <Col sm={12}>
             <h6>Buildweek 2</h6>
             
-            <p>Building a linkedin like app</p>
+            <p className="nav-p">Building a linkedin like app</p>
             </Col>
             </Row>
             </InputGroup>

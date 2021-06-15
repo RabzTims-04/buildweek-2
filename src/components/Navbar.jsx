@@ -3,7 +3,7 @@ import '../css/Head.css';
 
 const Head = () => {
   return (
-    <Navbar expand='lg' id='navbar' className='fixed-top'>
+    <Navbar style={{zIndex:'10'}} expand='lg' id='navbar' className='fixed-top'>
       <Navbar.Brand href='#home' className='center'>
         <img
           src='./assets/img/linkdin.jpg'
