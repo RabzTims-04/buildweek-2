@@ -68,7 +68,7 @@ class Profile extends Component {
            <Container fluid>
 
                <Row className="justify-content-between profilePage">
-                   <Col md={8} className="pt-5 d-flex flex-column">
+                   <Col md={8} className="py-5 d-flex flex-column">
                        <div>
                          <ProfileCardOne editInfo={this.editInfo} profileData={this.state.profileData}/>
                        </div>
