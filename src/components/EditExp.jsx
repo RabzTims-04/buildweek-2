@@ -122,7 +122,7 @@ handleShow =()=>{
                 />
               </Form.Group>
 
-              <Form.Group className='mb-3'>
+            {/*   <Form.Group className='mb-3'>
                 <Form.Label className='text-muted'>Type *</Form.Label>
                 <Form as='select'>
                   <option>Intership</option>
@@ -133,7 +133,7 @@ handleShow =()=>{
                 <Form.Text className='text-muted'>
                   Country-specific employment types
                 </Form.Text>
-              </Form.Group>
+              </Form.Group> */}
               <Form.Group>
                 <Form.Label>Company *</Form.Label>
                 <Form.Control
@@ -174,6 +174,7 @@ handleShow =()=>{
               </Form.Group>
 
               <Form.Group>
+              <Form.Label>Description</Form.Label>
                 <Form.Control
                   as='textarea'
                   placeholder='Leave description here'
