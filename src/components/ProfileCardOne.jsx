@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillCamera } from 'react-icons/ai';
 import EditModal from './EditModal';
+import EditExpModal from './EditExpModal';
 import { Jumbotron, Container, Button, Card, Row, Col } from 'react-bootstrap';
 import '../css/ProfileCardOne.css';
 import background from '../assets/backgroundCover.png';
@@ -38,7 +39,7 @@ class ProfileCardOne extends Component {
 
                             </Col>
                             <Col className="text-right" md={4}>
-
+                                <EditExpModal/>
                                <EditModal profileData={this.props.profileData} editInfo={this.props.editInfo}/>
                                </Col>
                                
