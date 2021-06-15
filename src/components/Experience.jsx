@@ -79,6 +79,11 @@ class Experience extends Component {
         }
     }
 
+    ageFunc =(dob) =>{
+        let today = new Date(dob)
+        return today
+    }
+
     render() {
 
         return (

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
-import { FiEdit2 } from 'react-icons/fi';
 import '../css/EditExp.css';
 export class EditExp extends Component {
   state = {

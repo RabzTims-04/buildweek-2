@@ -1,6 +1,5 @@
 import '../css/EditModal.css';
-import { FiEdit2 } from 'react-icons/fi';
-import { Modal, Button, Row, Col } from 'react-bootstrap'
+import { Modal } from 'react-bootstrap'
 import { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import EditProfile from './EditProfile';
