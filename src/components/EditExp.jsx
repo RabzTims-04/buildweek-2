@@ -12,9 +12,7 @@ export class EditExp extends Component {
       area: 'Berlin',
     },
   };
-  componentDidMount = () => {
-    console.log(this.state.editExp);
-  };
+
   StoreChange = (e) => {
     let id = e.currentTarget.id;
     let Exp = { ...this.state.editExp };
@@ -22,7 +20,8 @@ export class EditExp extends Component {
     this.setState({ editExp: Exp });
   };
 
-  editExp = async () => {
+  editExp = async (e) => {
+    e.preventDefault();
     const url =
       'https://striveschool-api.herokuapp.com/api/profile/60c72233291930001560aba1/experiences/60c87cf5c193050015871545';
     const key =
@@ -38,8 +37,8 @@ export class EditExp extends Component {
       });
       const editedExp = await response.json();
       if (response.ok) {
-        //console.log(editedInfo);
-        this.props.editExp(editedExp());
+        console.log(editedExp);
+        this.props.editExp(editedExp);
         alert('edit done');
         this.setState({
           ...this.state.editExp,

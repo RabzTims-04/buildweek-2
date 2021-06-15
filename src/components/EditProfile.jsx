@@ -43,7 +43,6 @@ class EditProfile extends Component {
       });
       const editedInfo = await response.json();
       if (response.ok) {
-        //console.log(editedInfo);
         this.props.editInfo = editedInfo;
         alert('edit done');
         this.setState({
