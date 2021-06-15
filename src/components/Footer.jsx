@@ -16,10 +16,10 @@ const Footer = ()=>{
                 </Col>
                 </Row>
             <Row>
-            <Col sm={2} className="col-1">
+            <Col sm={2} >
             
             <div>
-            <a href="#">About</a>
+            <a href="#" >About</a>
             </div>
             <div>
             <a href="#">Community Guidelines</a>
