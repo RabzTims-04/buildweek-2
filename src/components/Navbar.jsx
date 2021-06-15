@@ -5,9 +5,7 @@ import '../css/Head.css'
 
 const Head = ()=>{
     return(
-        
-        
-        <Navbar  expand="lg" id="navbar"  >
+        <Navbar  expand="lg" id="navbar" className="py-0 pr-0  mb-lg-3" >
           <Navbar.Brand href="#home"className="center">
               <img src="./assets/img/linkedin-logo.jpg" style={{width: 60, height: 40,}}/>
                   
