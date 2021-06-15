@@ -1,21 +1,16 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom'
-import { AiFillCamera } from 'react-icons/ai'
-import EditModal from './EditModal' 
+import { Link } from 'react-router-dom';
+import { AiFillCamera } from 'react-icons/ai';
+import EditModal from './EditModal';
 import { Jumbotron, Container, Button, Card, Row, Col } from 'react-bootstrap';
-import '../css/ProfileCardOne.css'
-import background from '../assets/backgroundCover.png'
+import '../css/ProfileCardOne.css';
+import background from '../assets/backgroundCover.png';
 
 class ProfileCardOne extends Component {
-
-   
-
-    render() {
-
-        return (
-          
-                <Card className="rounded">
-                    <Card.Img className="cardImg" variant="top" src={background} />
+  render() {
+    return (
+      <Card className='rounded'>
+        <Card.Img className='cardImg' variant='top' src={background} />
 
                          <Link>
                          <AiFillCamera className="camerabtn" style={{color:'blue', position:'absolute', right:'4%', top:'4%'}} size={20}/></Link>
@@ -35,16 +30,10 @@ class ProfileCardOne extends Component {
                                                                         
                                 </div>
 
-                                <Link style={{color:'blue'}} className="mt-1">
-                                     <p>19 connections</p>
-                                </Link>
-                                
-                                <div className="d-inline">
-                                    <Button className="badge-pill btn1" variant="primary">Open to</Button>
-                                    <Button className="badge-pill mx-2 btn2" variant="outline-secondary">Add section</Button>
-                                    <Button className="badge-pill btn3" variant="outline-secondary">More</Button>                                   
-                                </div>
-                            </Col>                                                             
+              <Link style={{ color: 'blue' }} className='mt-1'>
+                <p>19 connections</p>
+              </Link>
+
 
                             <Col className="text-right" md={4}>
 
@@ -76,11 +65,62 @@ class ProfileCardOne extends Component {
                             </Col>
                         </Row> */}
                     
-                    </Card.Body>
-                </Card>
+//                     </Card.Body>
+//                 </Card>
          
-        );
-    }
+//         );
+//     }
+
+//               <div className='d-inline'>
+//                 <Button className='badge-pill btn1' variant='primary'>
+//                   Open to
+//                 </Button>
+//                 <Button
+//                   className='badge-pill mx-2 btn2'
+//                   variant='outline-secondary'
+//                 >
+//                   Add section
+//                 </Button>
+//                 <Button className='badge-pill btn3' variant='outline-secondary'>
+//                   More
+//                 </Button>
+//               </div>
+//             </Col>
+
+//             <Col md={4}>
+//               <EditModal />
+//             </Col>
+//           </Row>
+//           <Row>
+//             <Col lg={6}>
+//               <Card.Footer className='text-muted d-flex'>
+//                 <Link style={{ lineHeight: '1.2em' }}>
+//                   <span className='d-block text-dark'>
+//                     <strong>Show recruiters you're open to work</strong> - you
+//                     control who sees this.
+//                   </span>
+//                   <span>Get Started</span>
+//                 </Link>
+//               </Card.Footer>
+//             </Col>
+
+//             <Col lg={6}>
+//               <Card.Footer className='text-muted d-flex'>
+//                 <Link style={{ lineHeight: '1.2em' }}>
+//                   <span className='d-block text-dark'>
+//                     <strong>Share that you're hiring</strong> and attract
+//                     qualified cadidates.
+//                   </span>
+//                   <span>Get Started</span>
+//                 </Link>
+//               </Card.Footer>
+//             </Col>
+//           </Row>
+        </Card.Body>
+      </Card>
+    );
+  }
+
 }
 
 export default ProfileCardOne;
