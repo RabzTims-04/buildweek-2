@@ -1,11 +1,4 @@
-import {
-  Navbar,
-  Nav,
-  NavDropdown,
-  Form,
-  FormControl,
-  Button,
-} from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
 import '../css/Head.css';
 
 const Head = () => {

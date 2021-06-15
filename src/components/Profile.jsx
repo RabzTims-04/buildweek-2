@@ -1,10 +1,12 @@
 import { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import '../css/Profile.css';
+//Components
 import ProfileCardOne from './ProfileCardOne';
 import PeopleAlsoViewed from './PeopleAlsoViewed';
 import Learning from './Learning';
-
+import Dashboard from './Dashboard';
+import Messaging from './Messaging';
 class Profile extends Component {
   state = {
     profileData: [],
@@ -43,6 +45,7 @@ class Profile extends Component {
         <Row className='justify-content-between'>
           <Col md={8} className='p-5'>
             <ProfileCardOne profileData={this.state.profileData} />
+            <Dashboard />
           </Col>
 
           <Col md={4}>
@@ -50,6 +53,7 @@ class Profile extends Component {
             <Learning />
           </Col>
         </Row>
+        <Messaging />
       </Container>
     );
   }

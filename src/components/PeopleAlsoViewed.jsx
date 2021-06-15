@@ -27,7 +27,6 @@ const PeopleAlsoViewed = () => {
           </div>
         </div>
       ))}
-      <div className='see_more'></div>
     </div>
   );
 };
