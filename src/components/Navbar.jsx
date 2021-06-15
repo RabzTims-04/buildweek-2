@@ -4,6 +4,7 @@ import '../css/Head.css';
 
 
 const Head = ()=>{
+
     return(
         
         
@@ -17,9 +18,7 @@ const Head = ()=>{
       <FormControl type="text" placeholder="Search" className="search " />
       {/* form-control-sm */}
     </Form>
-    
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ml-auto'>
           <Nav.Link href='#home' className='menuText'>
