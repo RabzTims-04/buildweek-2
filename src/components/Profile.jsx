@@ -25,6 +25,8 @@ class Profile extends Component {
     componentDidUpdate =(prevProps)=>{
         if(prevProps.profileData?.name !== this.state.profileData?.name){
             this.fetchData()
+        }else{
+            console.log('not changed');
         }
     }
 
