@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Card, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import EditExp from './EditExp';
 import '../css/Experience.css'
 
 class Experience extends Component {
@@ -19,9 +20,31 @@ class Experience extends Component {
             ]
         }
 
+        editExp =(val)=>{
+            console.log('val',val);
+            const updatedRef = this.state.experiences
+            console.log('ref',updatedRef);
+            const toUpdate = updatedRef.map(x => x._id).indexOf(val._id)
+            console.log('update',toUpdate);
+            updatedRef[toUpdate] = val           
+                this.setState({
+                    experiences:updatedRef
+                })            
+              }
+
     componentDidMount =()=>{
         this.experienceFetch()
     }
+
+     componentDidUpdate =(prevProps, prevState)=>{
+        console.log('prevstate',prevState);
+        if(prevState.experiences !== this.state.experiences){
+            this.experienceFetch()
+        }
+        else{
+            console.log('error');
+        }  
+    } 
 
     experienceFetch = async ()=>{
         const url= 'https://striveschool-api.herokuapp.com/api/profile/60c72233291930001560aba1/experiences'
@@ -78,13 +101,10 @@ class Experience extends Component {
                                     </Col> 
                                     <Col className="p-0 ml-4 " style={{borderBottom:'1px solid lightgrey'}}>
                                         <Link>
-                                            <div className="d-flex justify-content-between">
-                                               <div>
-                                                 <h6 className="m-0 text-dark">{exp.role}</h6>
-                                               </div>
-                                               <div className="">
-                                                   PUT
-                                               </div>
+                                            <div className="d-flex flex-row p-0 m-0 justify-content-between">                                         
+                                                <h6 className="m-0 p-0 text-dark">{exp.role}</h6>
+                                                    <EditExp className="m-0 p-0" editExp={this.editExp} data={exp} id={exp._id} />
+                                              
                                             </div>
                                             <p className="text-muted m-0">{exp.company}</p>
                                             <p className="light-text  m-0">{exp.startDate}</p>

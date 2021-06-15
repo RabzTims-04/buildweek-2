@@ -13,13 +13,13 @@
     border: 4px solid white;
     border-radius: 50%;
     width: 150px;
-    top:23%;
+    top:20%;
 }
 
 .cardImg{
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
-    height: 230px;
+    height: 180px;
 }
 
 .btn1{
