@@ -1,11 +1,11 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { Container, Card, Col, Button } from 'react-bootstrap'
+import { Container, Card, Col, Button, DropdownButton, Dropdown } from 'react-bootstrap'
 import '../css/NewsFeed.css'
 
 class NewsFeed extends Component {
 
-    state={
+    state={        
         newsFeeds:[]
     }
 
@@ -78,8 +78,21 @@ class NewsFeed extends Component {
                             
                         </Col>
 
-                        <Col sm={2}>
+                        <Col sm={2} className="pr-0">
+                        <Dropdown>
+                            <Dropdown.Toggle id="dropdown-news">
+                                <svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" className=" mercado-match" width="24" height="24" focusable="false">
+                                <path d="M14 12a2 2 0 11-2-2 2 2 0 012 2zM4 10a2 2 0 102 2 2 2 0 00-2-2zm16 0a2 2 0 102 2 2 2 0 00-2-2z"></path>                                
+                                </svg>
+                            </Dropdown.Toggle>
 
+                            <Dropdown.Menu>
+                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                         </Col>
                     </div>
 

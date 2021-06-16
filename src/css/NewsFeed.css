@@ -40,3 +40,25 @@
     width: 100%;
     max-height: 50%;
 }
+
+#dropdown-news{
+    background-color: transparent;
+    border-color: transparent;
+    padding-right: 0;
+    width: 0px;
+    height: 0px;
+}
+
+#dropdown-news:focus{
+    box-shadow: transparent!important;
+    border-color: transparent;
+}
+
+#dropdown-news:focus-visible{
+    box-shadow: transparent!important;
+    border-color: transparent;
+}
+
+#dropdown-news::after{
+    display: none!important;
+}
