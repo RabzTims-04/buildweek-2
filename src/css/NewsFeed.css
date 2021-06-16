@@ -15,7 +15,28 @@
     border-bottom: 1px solid lightgray;
 }
 
-/* .newsfeed-Cardbtn button{
+.newsfeed-Cardbtn button{
+    border-color: transparent;
+    padding: 0;
+} 
+
+.newsfeed-Cardbtn button:hover{
+    background-color: lightgray;
+    border-color: transparent;
+}
+
+.newsfeed-Cardbtn svg{
+    color: rgb(78, 73, 73);
+}
+
+.news-Img{
+    height: 40px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.coverImg{
+    object-fit: cover;
     width: 100%;
-    padding:0;
-} */
+    max-height: 50%;
+}

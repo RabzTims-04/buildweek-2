@@ -98,7 +98,7 @@ class Experience extends Component {
                                  <h6>Experience</h6>
                             </Col>
                             <Col className="text-right">
-                                <AddExpModal className="ml-5" style={{color:"gray", height:"30px"}}/>
+                                <AddExpModal className="m-0 p-0" style={{color:"gray", height:"30px"}}/>
                             </Col>
                         </Row> 
 

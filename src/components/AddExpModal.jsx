@@ -43,7 +43,7 @@ class EditModal extends Component{
         return(
 
         <>          
-            <BsPlus id="editbtn" onClick={this.handleShow} size={30}/>  
+            <BsPlus className="m-0" id="plusIcon" onClick={this.handleShow} size={30}/>  
             <Modal dialogClassName="my-modal" show={this.state.show} onHide={this.handleClose}>
                 <Modal.Header className="edit-modal" closeButton>                
                             <Modal.Title>Add Experience</Modal.Title>                
