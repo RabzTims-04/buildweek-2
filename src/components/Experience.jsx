@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { Card, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import '../css/Experience.css'
+import AddExpModal from './AddExpModal';
+
 
 class Experience extends Component {
 
@@ -23,6 +25,9 @@ class Experience extends Component {
         this.experienceFetch()
     }
 
+    componentDidUpdate=()=>{
+        this.experienceFetch()
+    }
     experienceFetch = async ()=>{
         const url= 'https://striveschool-api.herokuapp.com/api/profile/60c72233291930001560aba1/experiences'
         const key= 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
@@ -62,9 +67,8 @@ class Experience extends Component {
                             <Col>
                                  <h6>Experience</h6>
                             </Col>
-
                             <Col className="text-right">
-                               POST
+                                <AddExpModal className="ml-5" style={{color:"gray", height:"30px"}}/>
                             </Col>
                         </Row> 
 
