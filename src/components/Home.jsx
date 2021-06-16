@@ -1,7 +1,11 @@
 import { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import HomePost from './HomePost'
 import NewsFeed from './NewsFeed'
+import NewsList from './NewsList'
+import CourseList from './CourseList'
+import FooterList from './FooterList'
 import HomePutDel from './HomePutDel'
 import HomeLeft2 from './HomeLeft2';
 import HomeLeft from './HomeLeft';
@@ -38,42 +42,57 @@ class Home extends Component {
                    <Col sm={7} className="py-3 d-flex flex-column">
 
 
+
+                   
+
+
                        {/* Main */}
                        <div>
 
                            {/* Hasham's POST method Component*/}
 
+                           {/* <HomePost/> */}
+
+
                            <HomePost newPost={this.newPost} profilePic={this.props.profilePic}/>
                          {/* <ProfileCardOne/> */}
 
                            {/*   <HomePost/> */}
+
                          
 
                        </div>
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
+
+
+                           {/* <NewsFeed/>                         */}
+
                           
                            <NewsFeed newPost ={this.state.newsFeed}/>    
+
                         
                        </div>
 
                    </Col>
 
-                   <Col sm={3} className="py-3 d-flex flex-column">
+
+                   <Col  md={3} className="py-3 d-flex flex-column">
                        {/* right column */}
                        {/* Aymane PUT DELETE method component */}
-
                        {/* <HomePutDel/> */}
+                     
+                        <NewsList/>
+                        <CourseList/>
+                        <FooterList/>
+                    </Col>
 
-                      {/*  <HomePutDel/> */}
+                </Row> 
+                    
+                </Container>              
+           
 
-
-                   </Col>
-
-               </Row> 
-                
-            </Container>
         );
     }
 }
