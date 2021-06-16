@@ -7,48 +7,45 @@ import RProfileCardOne from './RProfileCardOne';
 import YourDashboard from './YourDashboard';
 import PeopleAlsoViewed from './PeopleAlsoViewed';
 import Learning from './Learning';
-import Experience from './Experience'
+import Experience from './Experience';
 /* import Dashboard from './Dashboard'; */
 import Messaging from './Messaging';
 
 class Profile extends Component {
+  state = {
+    profileData: [],
+  };
 
-
-    state={
-        profileData:[]
+  editInfo = (editInfo) => {
+    if (editInfo) {
+      this.setState({
+        profileData: editInfo,
+      });
     }
+  };
 
-    editInfo =(editInfo)=>{
-        if(editInfo){
-            this.setState({
-                profileData: editInfo
-            })
-        }
-        
+  componentDidUpdate = (prevProps, prevState) => {
+    console.log('state', prevState);
+    if (
+      prevState.profileData.name !== this.state.profileData.name ||
+      prevState.profileData.surname !== this.state.profileData.surname ||
+      prevState.profileData.email !== this.state.profileData.email ||
+      prevState.profileData.username !== this.state.profileData.username ||
+      prevState.profileData.title !== this.state.profileData.title ||
+      prevState.profileData.bio !== this.state.profileData.bio ||
+      prevState.profileData.area !== this.state.profileData.area ||
+      prevState.profileData.image !== this.state.profileData.image
+    ) {
+      this.fetchData();
+    } else {
+      console.log('not changed');
     }
+  };
 
-    componentDidUpdate =(prevProps, prevState)=>{
-        console.log('state',prevState)
-        if((prevState.profileData.name !== this.state.profileData.name)
-        ||(prevState.profileData.surname !== this.state.profileData.surname)
-        ||(prevState.profileData.email !== this.state.profileData.email)
-        ||(prevState.profileData.username !== this.state.profileData.username)
-        ||(prevState.profileData.title !== this.state.profileData.title)
-        ||(prevState.profileData.bio !== this.state.profileData.bio)
-        ||(prevState.profileData.area !== this.state.profileData.area)
-        ||(prevState.profileData.image !== this.state.profileData.image)
-        ){
-            this.fetchData()
-        }else{
-            console.log('not changed');
-        }
-    }
+  componentDidMount = () => {
+    this.fetchData();
+  };
 
-    componentDidMount =()=>{
-        this.fetchData()
-    }
-  
-  
   fetchData = async () => {
     try {
       const url = 'https://striveschool-api.herokuapp.com/api/profile/me';
@@ -68,50 +65,46 @@ class Profile extends Component {
       }
     } catch (error) {
       console.log(error);
-
     }
   };
 
-    render() {
+  render() {
+    return (
+      <Container fluid>
+        <Row className='justify-content-between profilePage'>
+          <Col lg={8} md={12} className='py-5 d-flex flex-column'>
+            <div>
+              <ProfileCardOne
+                editInfo={this.editInfo}
+                profileData={this.state.profileData}
+              />
+            </div>
 
-        return (
-           <Container fluid>
+            <div className='mt-3'>
+              <ProfileStrength />
+            </div>
 
-               <Row className="justify-content-between profilePage">
-                   <Col md={8} className="py-5 d-flex flex-column">
-                       <div>
-                         <ProfileCardOne editInfo={this.editInfo} profileData={this.state.profileData}/>
-                       </div>
+            <div className='mt-3'>
+              <YourDashboard />
+              {/* <Dashboard /> */}
+            </div>
 
-                       <div className="mt-3">
-                         <ProfileStrength/>
-                        
-                       </div>
+            <div className='mt-3'>
+              <Experience />
+            </div>
+          </Col>
 
-                       <div className="mt-3">
-                         <YourDashboard/>
-                         {/* <Dashboard /> */}
-                       </div>
-
-                       <div className="mt-3">
-                          <Experience/>
-                       </div>
-                    
-                   </Col>
-
-                   <Col md={4} className="pt-5 d-flex flex-column">
-                        <RProfileCardOne/>
-                       {/* <RProfileCardTwo/> */} 
-                       <PeopleAlsoViewed />
-                       <Learning />
-                       {/* Carls Components */}
-
-                   </Col>
-               </Row>
-               <Messaging />
-
-           </Container>
-        );
+          <Col lg={4} className='pt-5 d-flex flex-column d-md-none d-lg-block'>
+            <RProfileCardOne />
+            {/* <RProfileCardTwo/> */}
+            <PeopleAlsoViewed />
+            <Learning />
+            {/* Carls Components */}
+          </Col>
+        </Row>
+        <Messaging />
+      </Container>
+    );
   }
 }
 
