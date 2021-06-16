@@ -54,6 +54,7 @@ export class HomePutDel extends Component {
         },
       });
       if (response.ok) {
+        this.props.filter(this.props.id);
         alert('Are you sure you want to delete?');
       } else {
         //console.log('error');

@@ -45,12 +45,17 @@ class NewsFeed extends Component {
             })            
           }
 
+          filter = (filterval) =>{
+            this.setState({
+                newsFeeds:this.state.newsFeeds.filter(news => news._id !== filterval)
+            })
+        }
+
     newsFeedFetch = async()=>{
         const url = 'https://striveschool-api.herokuapp.com/api/posts/'
         const key= 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
 
         try {
-
             const response = await fetch(url,{
                 headers:{
                     'Authorization':key
@@ -107,7 +112,7 @@ class NewsFeed extends Component {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item><HomePutDel editNews={this.editNews} id={news._id} text={news.text} /></Dropdown.Item>
+                                <Dropdown.Item><HomePutDel editNews={this.editNews} id={news._id} text={news.text} filter={this.filter}/></Dropdown.Item>
                                 <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                             </Dropdown.Menu>
