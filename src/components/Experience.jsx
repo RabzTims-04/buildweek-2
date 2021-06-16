@@ -3,6 +3,8 @@ import { Card, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import EditExp from './EditExp';
 import '../css/Experience.css'
+import AddExpModal from './AddExpModal';
+
 
 class Experience extends Component {
 
@@ -83,6 +85,12 @@ class Experience extends Component {
         return today
     }
 
+    addexp =(expval)=>{
+        this.setState({
+            experiences:[expval, ...this.state.experiences]
+        })
+    }
+
     render() {
 
         return (
@@ -95,9 +103,8 @@ class Experience extends Component {
                             <Col>
                                  <h6>Experience</h6>
                             </Col>
-
-                            <Col className="text-right">
-                               POST
+                            <Col className="text-right pr-0">
+                                <AddExpModal addexp={this.addexp} className="ml-auto p-0" style={{color:"gray", height:"30px"}}/>
                             </Col>
                         </Row> 
 

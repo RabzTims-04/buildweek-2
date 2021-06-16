@@ -20,7 +20,7 @@ function App() {
         <Route exact path ="/" component={SecondNav}/>
         <Route exact path="/" component={Profile}/>
         <Route exact path ="/feed" component ={Home}/>
-        <Footer/>
+        <Route exact path ="/" component ={Footer}/>
 
  
       </Router>

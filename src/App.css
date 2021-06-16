@@ -1,3 +1,7 @@
 body{
     background-color: #F3F2EF;
 }
+
+#plusIcon svg{
+    margin: 0;
+}
