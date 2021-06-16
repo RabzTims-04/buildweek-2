@@ -3,9 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap'
 import HomePost from './HomePost'
 import NewsFeed from './NewsFeed'
 import HomePutDel from './HomePutDel'
-import HomeLeft from './HomeLeft';
+import HomeLeft2 from './HomeLeft2';
 import ProfileCardOne from './ProfileCardOne';
-
+import HomeLeft from './HomeLeft';
 
 class Home extends Component {
     render() {
@@ -16,10 +16,11 @@ class Home extends Component {
                    <Col sm={2} className="py-5 d-flex flex-column">
                        {/* {Profile} */}
                        <HomeLeft/>
+                       <HomeLeft2/>
 
                    </Col>
 
-                   <Col sm={6} className="py-5 d-flex flex-column">
+                   <Col sm={7} className="py-5 d-flex flex-column">
                        {/* Main */}
                        <div>
 
