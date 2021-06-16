@@ -36,7 +36,7 @@ class Home extends Component {
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
-
+                             <HomePutDel />
                            {/* <NewsFeed/>                         */}
                         
                        </div>
