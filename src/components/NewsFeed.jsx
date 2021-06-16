@@ -19,7 +19,7 @@ class NewsFeed extends Component {
         "https://www.hubspot.com/hubfs/Smiling%20Leo%20Perfect%20GIF.gif",
         "https://techcrunch.com/wp-content/uploads/2014/06/surprised-andy.gif",
         "https://media0.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif",
-        "https://i.pinimg.com/originals/47/6d/3b/476d3b8716d4e51c479784369a8630e1.gif"                 
+        "https://i.pinimg.com/originals/47/6d/3b/476d3b8716d4e51c479784369a8630e1.gif",'https://content.linkedin.com/content/dam/business/talent-solutions/global/en_us/blog/2013/09/hugh-grant.gif'                 
             ]
         }
 
@@ -62,7 +62,7 @@ class NewsFeed extends Component {
                 }
             })
             const data = await response.json()
-            const newsFeeds = await data.slice(-10,-1)
+            const newsFeeds = await data.slice(-10)
             if(response.ok){
                 console.log(newsFeeds);
                 this.setState({
