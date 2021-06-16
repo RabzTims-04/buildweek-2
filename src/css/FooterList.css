@@ -1,0 +1,22 @@
+.Footerlist{
+    display:flex;
+    list-style: none;
+    justify-content: center;
+    text-align:center;
+    padding-left: 0;
+}
+.Footerlist li{
+    padding:0 .25em;
+    font-size:.775em;
+    color:rgb(100,100,100);
+    display: flex;
+    margin: .4rem .8rem;
+}
+.FooterListBottom li{ 
+    display:inline;
+}
+.FooterListCopyRight{ 
+    display:inline;
+    color:rgb(100,100,100);
+    font-size:.775em;
+}

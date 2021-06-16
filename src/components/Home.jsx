@@ -1,7 +1,11 @@
 import { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import HomePost from './HomePost'
 import NewsFeed from './NewsFeed'
+import NewsList from './NewsList'
+import CourseList from './CourseList'
+import FooterList from './FooterList'
 import HomePutDel from './HomePutDel'
 
 
@@ -16,34 +20,37 @@ class Home extends Component {
 
                    </Col>
 
-                   <Col sm={7} className="py-5 d-flex flex-column">
+                   <Col sm={6} className="py-5 d-flex flex-column">
                        {/* Main */}
                        <div>
 
                            {/* Hasham's POST method Component*/}
-                           <HomePost/>
+                           {/* <HomePost/> */}
                          
                        </div>
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
 
-                           <NewsFeed/>                        
+                           {/* <NewsFeed/>                         */}
                         
                        </div>
 
                    </Col>
 
-                   <Col sm={3} className="py-5 d-flex flex-column">
+                   <Col  md={4} className="py-5 d-flex flex-column">
                        {/* right column */}
                        {/* Aymane PUT DELETE method component */}
-                       <HomePutDel/>
+                       {/* <HomePutDel/> */}
+                     
+                        <NewsList/>
+                        <CourseList/>
+                        <FooterList/>
+                    </Col>
 
-                   </Col>
-
-               </Row> 
-                
-            </Container>
+                </Row> 
+                    
+                </Container>
         );
     }
 }
