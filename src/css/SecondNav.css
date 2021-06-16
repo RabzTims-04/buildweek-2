@@ -1,10 +1,11 @@
- #margin{
-   /*   margin-left: 100px; 
-     margin-right: 100px; */
-     position: fixed;    
+#margin{
+    /* margin-left: 100px; */
+    /* margin-right: 100px; */
     background-color: white;
     padding-top:-20px;
     padding-bottom:-20px;
+    position:fixed;
+
    /*  top:100px; */
     transition: bottom 0.3s;
     transform:translateY(70%); 
@@ -107,13 +108,15 @@
   
 
 .nav-p{
-    font-size: 12px;
+
+   font-size: 12px;
     margin-bottom:-20px;
 }
 
+
 #more{
-    margin-right: 10px !important;
-    margin-left:10px !important;
+ margin-right: 10px !important;
+ margin-left:10px !important;
     border: 1px solid black !important;
     border-radius: 25px !important;  
     color: gray !important;
@@ -121,7 +124,6 @@
     /* width:100px;   */
     height:35px;
     background-color: white;
-  
 }
 
 #addsection{
@@ -140,6 +142,7 @@
 .blue{
     border-radius: 25px;
 }
+
 #avatar{
 width:30PX;
 height:30px;
