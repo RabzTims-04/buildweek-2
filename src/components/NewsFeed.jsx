@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
+import HomePutDel from './HomePutDel'
 import { Container, Card, Col, Button, DropdownButton, Dropdown } from 'react-bootstrap'
 import '../css/NewsFeed.css'
 
@@ -18,27 +19,50 @@ class NewsFeed extends Component {
         "https://www.hubspot.com/hubfs/Smiling%20Leo%20Perfect%20GIF.gif",
         "https://techcrunch.com/wp-content/uploads/2014/06/surprised-andy.gif",
         "https://media0.giphy.com/media/26u4lOMA8JKSnL9Uk/giphy.gif",
-        "https://i.pinimg.com/originals/47/6d/3b/476d3b8716d4e51c479784369a8630e1.gif"                 
+        "https://i.pinimg.com/originals/47/6d/3b/476d3b8716d4e51c479784369a8630e1.gif",'https://content.linkedin.com/content/dam/business/talent-solutions/global/en_us/blog/2013/09/hugh-grant.gif'                 
             ]
+        }
+
+        componentDidUpdate =(prevProps)=>{
+            if(prevProps.newPost !== this.props.newPost)
+           this.newsFeedFetch()
         }
 
     componentDidMount =()=>{
         this.newsFeedFetch()
     }
 
+    editNews =(val)=>{
+        console.log('val',val);
+        const updatedRef = this.state.newsFeeds
+        console.log('ref',updatedRef);
+        const toUpdate = updatedRef.map(x => x._id).indexOf(val._id)
+        console.log('updatetext',updatedRef[toUpdate].text);
+        console.log('update',toUpdate);
+        updatedRef[toUpdate].text = val.text           
+            this.setState({
+                newsFeeds: updatedRef
+            })            
+          }
+
+          filter = (filterval) =>{
+            this.setState({
+                newsFeeds:this.state.newsFeeds.filter(news => news._id !== filterval)
+            })
+        }
+
     newsFeedFetch = async()=>{
         const url = 'https://striveschool-api.herokuapp.com/api/posts/'
         const key= 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
 
         try {
-
             const response = await fetch(url,{
                 headers:{
                     'Authorization':key
                 }
             })
             const data = await response.json()
-            const newsFeeds = await data.slice(-10,-1)
+            const newsFeeds = await data.slice(-10)
             if(response.ok){
                 console.log(newsFeeds);
                 this.setState({
@@ -88,7 +112,7 @@ class NewsFeed extends Component {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                <Dropdown.Item><HomePutDel editNews={this.editNews} id={news._id} text={news.text} filter={this.filter}/></Dropdown.Item>
                                 <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                             </Dropdown.Menu>
@@ -98,7 +122,7 @@ class NewsFeed extends Component {
 
                     <div style={{fontSize:'0.8em'}} className="d-flex flex-row mt-2 mb-0">
 
-                       <p className="mb-0">{news.user.bio}</p> 
+                       <p className="mb-0">{news.text}</p> 
 
                     </div>  
                 </Container>                           
