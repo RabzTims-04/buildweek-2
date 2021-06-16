@@ -1,4 +1,4 @@
-import '../css/EditModal.css'
+/* import '../css/EditModal.css'
 import { FiEdit2 } from 'react-icons/fi';
 import { Modal } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
@@ -14,7 +14,7 @@ const [show, setShow] = useState(false);
 
     return (
         <>          
-            {/* <FiEdit2 size={30}/>   */}
+            {/* <FiEdit2 size={30}/>   
             <div onClick={handleShow} className="" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" fill="currentColor" className="mercado-match" width="24" height="24" focusable="false">
             <path d="M21 13h-8v8h-2v-8H3v-2h8V3h2v8h8z"></path>
             </svg> </div>            
@@ -37,7 +37,7 @@ const [show, setShow] = useState(false);
                 <Modal.Footer>
                 {/* <Button className="badge-pill savebtn" onClick={()=>handleClose()} variant="primary" type="submit">
                     <strong>Save</strong>
-                </Button> */}
+                </Button> *
 
                 </Modal.Footer>
             </Modal> 
@@ -47,3 +47,4 @@ const [show, setShow] = useState(false);
 }
 
 export default withRouter(EditExpModal)
+ */

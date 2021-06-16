@@ -60,7 +60,7 @@ class NewsFeed extends Component {
             this.state.newsFeeds               
             
             ?this.state.newsFeeds.map((news,i) => <Card key={news._id} className='rounded mt-3'>
-               <Container className="pt-4 pr-4 pl-3 pb-0 mb-0">
+               <Container className="pt-3 pr-0 pl-3 pb-0 mb-0">
                     <div className="d-flex flex-row">
                         <Col sm={1} className="p-0 mt-1">
                             <img src={news.user.image} alt="p" className="img-fluid news-Img" />

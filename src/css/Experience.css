@@ -15,3 +15,8 @@
 .light-text {
     color:#C1C1C1;
 }
+
+#plusIcon:hover{
+    border-radius: 50%;
+    background-color: #e4e4e4;
+}
