@@ -36,8 +36,7 @@ class ProfileCardOne extends Component {
 
                             <Col className="text-right" md={4}>
                                <EditModal profileData={this.props.profileData} editInfo={this.props.editInfo}/>
-                            </Col>
-                               
+                            </Col>                              
                         
                         </Row>
 

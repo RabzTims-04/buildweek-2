@@ -14,8 +14,7 @@ class Experience extends Component {
         imglogo:["https://media-exp1.licdn.com/dms/image/C560BAQHdAaarsO-eyA/company-logo_100_100/0/1595530301220?e=1631750400&v=beta&t=epCwObuNQ7fgzYahnWONi2D1ghbJkdq0i3EBX2oZiTE",
                 "https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_100_100/0/1519856215226?e=1631750400&v=beta&t=V4NBm-NohF2bjS1mrIlkZq3-gKb49SpeBtV80UPFSR8",
                 "https://media-exp1.licdn.com/dms/image/C560BAQE88xCsONDULQ/company-logo_100_100/0/1618231291419?e=1631750400&v=beta&t=BF5HxHU4xDnT0-hGNOzeWTxjcdx8SChkLzYJWfKA2TA",
-                "https://media-exp1.licdn.com/dms/image/C560BAQGrV5i4K9YdhQ/company-logo_100_100/0/1621582241755?e=1631750400&v=beta&t=ouxs0fFm2EgInSZZSUXFZlVk6zuidkmNwmG7y6YVuRw"
-                
+                "https://media-exp1.licdn.com/dms/image/C560BAQGrV5i4K9YdhQ/company-logo_100_100/0/1621582241755?e=1631750400&v=beta&t=ouxs0fFm2EgInSZZSUXFZlVk6zuidkmNwmG7y6YVuRw"                
                 
             ]
         }
