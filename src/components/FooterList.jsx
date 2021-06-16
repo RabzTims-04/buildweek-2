@@ -1,6 +1,7 @@
 import {Row, Col, DropdownButton,Dropdown,ButtonGroup} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import './../css/FooterList.css'
+import { BsChevronCompactDown } from 'react-icons/bs'
 
 const FooterList = () => {
     return (
@@ -12,12 +13,12 @@ const FooterList = () => {
              <li><Link style={{fontWeight:"400"}}>Help Center</Link></li>
             </ul>
             <ul className="Footerlist my-0">
-             <li><Link style={{fontWeight:"400"}}> Privacy & Terms</Link></li>
+             <li><Link style={{fontWeight:"400"}}>Privacy & Terms <BsChevronCompactDown style={{width:"15px"}} className="d-inline"/></Link></li>
              <li><Link style={{fontWeight:"400"}}>Ad Choices</Link></li>
             </ul>
             <ul className="Footerlist my-0">
              <li> <Link style={{fontWeight:"400"}}>Advertising</Link></li>
-             <li><Link style={{fontWeight:"400"}}>Business Services</Link></li>
+             <li><Link style={{fontWeight:"400"}}>Business Services <BsChevronCompactDown  style={{width:"15px"}} className="d-inline"/></Link></li>
             </ul>
             <ul className="Footerlist my-0">
              <li> <Link style={{fontWeight:"400"}}>Get the LinkedIn App</Link></li>

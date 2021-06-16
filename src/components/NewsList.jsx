@@ -17,25 +17,25 @@ const NewsList = () => {
                 <Col>
 
                 <ul className="list">
-                    <li className="list-item"><Link>The revolution will not be televised </Link><br>
+                    <li className="list-item"><Link>How to not get #MeToo'd</Link><br>
                         </br>
-                        <span className="details"> 10h ago • 200 readers</span>
+                        <span className="details"> 10h ago • 3456 readers</span>
                     </li>
                     <li className="list-item"><Link>The revolution will not be televised </Link><br>
                         </br>
-                        <span className="details"> 10h ago • 200 readers</span>
+                        <span className="details"> 10h ago • 988 readers</span>
                     </li>
-                    <li className="list-item"><Link>The revolution will not be televised </Link> <br>
+                    <li className="list-item"><Link>Imposter Syndrome epidemic</Link> <br>
                         </br>
-                        <span className="details">10h ago • 200 readers</span>
+                        <span className="details">10h ago • 1048 readers</span>
                     </li>
-                    <li className="list-item"><Link>The revolution will not be televised </Link><br>
+                    <li className="list-item"><Link>Autonomy in the workplace </Link><br>
                         </br>
-                        <span className="details"> 10h ago • 200 readers</span>
+                        <span className="details"> 10h ago • 607 readers</span>
                     </li>
-                    <li className="list-item"><Link>The revolution will not be televised </Link><br>
+                    <li className="list-item"><Link>Let's talk about Cancel Culture </Link><br>
                         </br>
-                        <span className="details"> 10h ago • 200 readers</span>
+                        <span className="details"> 10h ago • 5982 readers</span>
                     </li>
                 </ul>
                 </Col>
