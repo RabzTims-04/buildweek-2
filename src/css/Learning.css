@@ -17,12 +17,11 @@
   width: 25px;
 }
 .learning_title > div {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 17px;
   padding-left: 10px;
 }
 .add_skills {
-  font-size: 25px;
+  font-size: 19px;
   padding-left: 10px;
 }
 .videos_container {
@@ -48,6 +47,7 @@
 }
 .video_views {
   padding: 0 10px;
+  color: gray;
 }
 .show_more {
   text-align: center;

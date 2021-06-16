@@ -1,0 +1,38 @@
+#postText{
+    border-radius: 25px !important;
+    height:50px;
+    margin-top:5px;
+}
+#imgAvatar{
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+Button{
+    /* color:dodgerblue ; */
+    margin-top:10px;
+    color: gray;
+}
+Button:hover{
+    background-color:lightgray;
+}
+#photo svg{
+    color:dodgerblue ;
+    margin-right:10px;
+    /* margin-top:10px; */
+}
+
+#video svg{
+   color: rgb(103, 186, 19); 
+   margin-right:10px;
+}
+#event svg{
+    color:goldenrod;
+    margin-right:10px;
+}
+#article svg{
+    color:darkorange;
+    margin-right:10px;
+}

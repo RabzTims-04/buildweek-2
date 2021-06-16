@@ -7,38 +7,78 @@ import NewsList from './NewsList'
 import CourseList from './CourseList'
 import FooterList from './FooterList'
 import HomePutDel from './HomePutDel'
-
+import HomeLeft2 from './HomeLeft2';
+import HomeLeft from './HomeLeft';
+import ProfileCardOne from './ProfileCardOne';
+import HomeLeft from './HomeLeft';
 
 class Home extends Component {
+
+    state ={
+        newsFeed:null
+    }
+
+    newPost =(postVal)=>{
+        this.setState({
+            newsFeed:postVal
+        })
+    }
+
+
     render() {
+
+
         return (
             <Container fluid className="">
                <Row className="justify-content-between profilePage">
 
-                   <Col sm={2} className="py-5 d-flex flex-column">
+                   <Col sm={2} className="py-3 d-flex flex-column">
                        {/* {Profile} */}
+                       <HomeLeft/>
+                       <HomeLeft2/>
 
-                   </Col>
+                   </Col>                
 
-                   <Col sm={6} className="py-5 d-flex flex-column">
+                   <Col sm={7} className="py-3 d-flex flex-column">
+
+
+
+                   
+
+
                        {/* Main */}
                        <div>
 
                            {/* Hasham's POST method Component*/}
+
                            {/* <HomePost/> */}
+
+
+                           <HomePost newPost={this.newPost} profilePic={this.props.profilePic}/>
+                         {/* <ProfileCardOne/> */}
+
+                           {/*   <HomePost/> */}
+
                          
+
                        </div>
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
 
+
                            {/* <NewsFeed/>                         */}
+
+                          
+                           <NewsFeed newPost ={this.state.newsFeed}/>    
+
                         
                        </div>
 
                    </Col>
 
-                   <Col  md={4} className="py-5 d-flex flex-column">
+
+                   <Col  md={3} className="py-3 d-flex flex-column">
                        {/* right column */}
                        {/* Aymane PUT DELETE method component */}
                        {/* <HomePutDel/> */}
@@ -50,7 +90,9 @@ class Home extends Component {
 
                 </Row> 
                     
-                </Container>
+                </Container>              
+           
+
         );
     }
 }

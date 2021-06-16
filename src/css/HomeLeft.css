@@ -1,0 +1,30 @@
+#occupation{
+   font-size: 12px;
+   text-align: center;
+}
+.username{
+    text-align: center;
+}
+.viewed{
+    margin-left:10px;
+    color: rgb(0, 94, 255);
+    
+}
+.viewed2{
+    margin-left:35px;
+    color: rgb(0, 94, 255);
+}
+#profilePhoto{
+    width: 60px;
+    
+    position: absolute;
+    top: 40px;
+    left: 90px;
+    
+}
+#link{
+    color: rgb(0, 94, 255);
+}
+.discover{
+    text-align: center;
+}
