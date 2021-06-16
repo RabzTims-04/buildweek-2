@@ -22,7 +22,7 @@ const PeopleAlsoViewed = () => {
         <div className='profils_container' key={p._id}>
           <img src={p.image} alt={p.name + ' ' + p.surname} />
           <div className='profile_info'>
-            <Link>
+            <Link to="">
                 <div className='name'>{p.name + ' ' + p.surname}</div>
                 <div className='speciality text-muted' style={{fontSize:'0.8em'}}>{p.title}</div>
             </Link>

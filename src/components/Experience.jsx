@@ -111,7 +111,7 @@ class Experience extends Component {
                                         <img src={this.img?.imglogo[i]} alt="logo" className=" img-fluid "/>
                                     </Col> 
                                     <Col className="p-0 ml-4 " style={{borderBottom:'1px solid lightgrey'}}>
-                                        <Link>
+                                        <Link to="">
                                             <div className="d-flex flex-row p-0 m-0 justify-content-between">                                         
                                                 <h6 className="m-0 p-0 text-dark">{exp.role}</h6>
                                                     <EditExp className="m-0 p-0" filter={this.filter} editExp={this.editExp} data={exp} id={exp._id} />

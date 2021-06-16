@@ -114,7 +114,7 @@ const Footer = () => {
         </Col>
       </Row>
       <Row>
-        <Col SM={12}>
+        <Col sm={12}>
           <p className='copyRight'> Linkedin Corporation &copy; 2021</p>
         </Col>
       </Row>

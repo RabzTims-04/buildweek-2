@@ -13,7 +13,7 @@ class ProfileCardOne extends Component {
         <Card.Img className='cardImg' variant='top' src={background} />
 
 
-                         <Link>
+                         <Link to="">
                          <AiFillCamera className="camerabtn" style={{color:'blue', position:'absolute', right:'4%', top:'4%'}} size={20}/></Link>
                     
                     <Card.Body>                       
@@ -25,11 +25,11 @@ class ProfileCardOne extends Component {
                                 <span>{this.props.profileData.bio}</span>
                                 <div className="d-inline mt-1">
                                     <span className="mr-2 text-muted">{this.props.profileData.area} .</span>
-                                    <Link style={{color:'blue'}}>
+                                    <Link to="" style={{color:'blue'}}>
                                         <span>Contact info</span>
                                     </Link>                                   
                                 </div>
-                                <Link style={{ color: 'blue' }} className='mt-1'>
+                                <Link to="" style={{ color: 'blue' }} className='mt-1'>
                                   <p>19 connections</p>
                                 </Link>
                             </Col>
