@@ -1,41 +1,64 @@
 import { Component } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-// import HomePost from './HomePost';
-// import NewsFeed from './NewsFeed';
-import HomePutDel from './HomePutDel';
+import { Container, Row, Col } from 'react-bootstrap'
+import HomePost from './HomePost'
+import NewsFeed from './NewsFeed'
+import HomePutDel from './HomePutDel'
+import HomeLeft from './HomeLeft';
+import ProfileCardOne from './ProfileCardOne';
+
 
 class Home extends Component {
-  render() {
-    return (
-      <Container fluid className=''>
-        <Row className='justify-content-between profilePage'>
-          <Col sm={2} className='py-5 d-flex flex-column'>
-            {/* {Profile} */}
-          </Col>
+    render() {
+        return (
+            <Container fluid className="">
+               <Row className="justify-content-between profilePage">
 
-          <Col sm={7} className='py-5 d-flex flex-column'>
-            {/* Main */}
-            <div>
-              {/* Hasham's POST method Component*/}
-              {/* <HomePost/> */}
-            </div>
+                   <Col sm={2} className="py-3 d-flex flex-column">
+                       {/* {Profile} */}
+                       <HomeLeft/>
 
-            <div className='mt-3'>
-              {/* Rabia's GET method Component */}
-              {/* 
-              <NewsFeed /> */}
-              <HomePutDel />
-            </div>
-          </Col>
+                   </Col>                
 
-          <Col sm={3} className='py-5 d-flex flex-column'>
-            {/* right column */}
-            {/* Aymane PUT DELETE method component */}
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+                   <Col sm={7} className="py-3 d-flex flex-column">
+
+                       {/* Main */}
+                       <div>
+
+                           {/* Hasham's POST method Component*/}
+
+                           <HomePost/>
+                         {/* <ProfileCardOne/> */}
+
+                           {/*   <HomePost/> */}
+                         
+
+                       </div>
+
+                       <div className="mt-3">
+                           {/* Rabia's GET method Component */}
+                             <HomePutDel />
+                           {/* <NewsFeed/>                         */}
+                        
+                       </div>
+
+                   </Col>
+
+                   <Col sm={3} className="py-3 d-flex flex-column">
+                       {/* right column */}
+                       {/* Aymane PUT DELETE method component */}
+
+                       {/* <HomePutDel/> */}
+
+                      {/*  <HomePutDel/> */}
+
+
+                   </Col>
+
+               </Row> 
+                
+            </Container>
+        );
+    }
 }
 
 export default Home;

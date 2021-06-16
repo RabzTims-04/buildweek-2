@@ -1,12 +1,11 @@
 import '../css/EditModal.css';
-import { FiEdit2 } from 'react-icons/fi';
 import { Modal, Button, Row, Col } from 'react-bootstrap'
 import { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import AddExp from './AddExp';
 import {BsPlus} from 'react-icons/bs'
 
-class EditModal extends Component{
+class AddExpModal extends Component{
 
         state={
             show:false,
@@ -43,13 +42,13 @@ class EditModal extends Component{
         return(
 
         <>          
-            <BsPlus id="editbtn" onClick={this.handleShow} size={30}/>  
+            <BsPlus className="mr-0 addexp" id="plusIcon" onClick={this.handleShow} size={30}/>  
             <Modal dialogClassName="my-modal" show={this.state.show} onHide={this.handleClose}>
                 <Modal.Header className="edit-modal" closeButton>                
                             <Modal.Title>Add Experience</Modal.Title>                
                 </Modal.Header>
                 <Modal.Body className="modal-Body mt-4">
-                    <AddExp profileData={this.state.profileData} editInfo={this.props.editInfo} submit={this.submit}/>               
+                    <AddExp addexp={this.props.addexp} />               
                 </Modal.Body>
                 <Modal.Footer>
                {/*  <Button 
@@ -66,4 +65,4 @@ class EditModal extends Component{
   }
 }
 
-export default withRouter(EditModal)
+export default withRouter(AddExpModal)

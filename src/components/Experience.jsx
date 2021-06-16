@@ -85,6 +85,12 @@ class Experience extends Component {
         return today
     }
 
+    addexp =(expval)=>{
+        this.setState({
+            experiences:[expval, ...this.state.experiences]
+        })
+    }
+
     render() {
 
         return (
@@ -97,8 +103,8 @@ class Experience extends Component {
                             <Col>
                                  <h6>Experience</h6>
                             </Col>
-                            <Col className="text-right">
-                                <AddExpModal className="ml-5" style={{color:"gray", height:"30px"}}/>
+                            <Col className="text-right pr-0">
+                                <AddExpModal addexp={this.addexp} className="ml-auto p-0" style={{color:"gray", height:"30px"}}/>
                             </Col>
                         </Row> 
 
