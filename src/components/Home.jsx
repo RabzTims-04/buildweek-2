@@ -2,7 +2,6 @@ import { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import HomePost from './HomePost'
 import NewsFeed from './NewsFeed'
-import HomePutDel from './HomePutDel'
 import HomeLeft from './HomeLeft';
 import ProfileCardOne from './ProfileCardOne';
 
@@ -50,7 +49,7 @@ class Home extends Component {
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
-                            {/*  <HomePutDel /> */}
+                          
                            <NewsFeed newPost ={this.state.newsFeed}/>    
                         
                        </div>

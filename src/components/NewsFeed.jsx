@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
+import HomePutDel from './HomePutDel'
 import { Container, Card, Col, Button, DropdownButton, Dropdown } from 'react-bootstrap'
 import '../css/NewsFeed.css'
 
@@ -30,6 +31,19 @@ class NewsFeed extends Component {
     componentDidMount =()=>{
         this.newsFeedFetch()
     }
+
+    editNews =(val)=>{
+        console.log('val',val);
+        const updatedRef = this.state.newsFeeds
+        console.log('ref',updatedRef);
+        const toUpdate = updatedRef.map(x => x._id).indexOf(val._id)
+        console.log('updatetext',updatedRef[toUpdate].text);
+        console.log('update',toUpdate);
+        updatedRef[toUpdate].text = val.text           
+            this.setState({
+                newsFeeds: updatedRef
+            })            
+          }
 
     newsFeedFetch = async()=>{
         const url = 'https://striveschool-api.herokuapp.com/api/posts/'
@@ -93,7 +107,7 @@ class NewsFeed extends Component {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
+                                <Dropdown.Item><HomePutDel editNews={this.editNews} id={news._id} text={news.text} /></Dropdown.Item>
                                 <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
                                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                             </Dropdown.Menu>

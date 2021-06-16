@@ -3,14 +3,16 @@ import { Modal, Button, Form } from 'react-bootstrap';
 
 export class HomePutDel extends Component {
   state = {
+    show: false,
     editPost: {
-      text: 'new edit',
+      text: this.props.text,
     },
   };
 
   EditPost = async (e) => {
+    e.preventDefault()
     const url =
-      'https://striveschool-api.herokuapp.com/api/posts/60c9e6d15cd73400155f6055';
+      'https://striveschool-api.herokuapp.com/api/posts/' + this.props.id;
     const key =
       'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o';
     try {
@@ -22,9 +24,12 @@ export class HomePutDel extends Component {
           'Content-type': 'application/json',
         },
       });
+      const editNews = await response.json()
+      this.props.editNews(editNews);
       if (response.ok) {
         alert('edit done');
         this.setState({
+          ...this.state,
           ...this.state.editPost,
         });
       } else {
@@ -37,7 +42,7 @@ export class HomePutDel extends Component {
   deletePost = async (e) => {
     e.preventDefault();
     const url =
-      'https://striveschool-api.herokuapp.com/api/posts/60c9e6d15cd73400155f6055';
+      'https://striveschool-api.herokuapp.com/api/posts/' + this.props.id;
     const key =
       'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o';
 
@@ -57,11 +62,32 @@ export class HomePutDel extends Component {
       console.log(error);
     }
   };
+
+  handleClose = () => {
+    this.setState({
+      ...this.state,
+      show: false,
+    });
+  };
+
+  handleShow = () => {
+    this.setState({
+      ...this.state,
+      show: true,
+    });
+  };
+
+
   render() {
     return (
       <div>
-        <Modal.Dialog>
-          <Modal.Header closeButton>
+        <p onClick={this.handleShow}> EDIT</p>
+        <Modal dialogClassName='my-modal'
+          show={this.state.show}
+          onHide={this.handleClose}>
+          <Modal.Header closeButton onClick={(e) => {
+              this.handleClose();
+            }}>
             <Modal.Title>Edit Post</Modal.Title>
           </Modal.Header>
 
@@ -71,7 +97,6 @@ export class HomePutDel extends Component {
                 <Form.Label>Edit text *</Form.Label>
                 <Form.Control
                   type='text'
-                  placeholder='Enter new text'
                   value={this.state.editPost.text}
                   onChange={(e) =>
                     this.setState({ editPost: { text: e.target.value } })
@@ -91,7 +116,7 @@ export class HomePutDel extends Component {
               </Button>
             </Form>
           </Modal.Body>
-        </Modal.Dialog>
+        </Modal>
       </div>
     );
   }
