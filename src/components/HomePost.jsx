@@ -13,9 +13,12 @@ class NewsFeed extends Component {
         text:''
     }
     }
-    addPOST = async (e)=>{
+    _addPOST = async (e)=>{
+      console.log(e.key);
+        if(e.key ==='Enter'){
+            e.preventDefault()
         const url ='https://striveschool-api.herokuapp.com/api/posts/'
-        const key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3ZTc3MmMxOTMwNTAwMTU4NzE1M2EiLCJpYXQiOjE2MjM3MTM2NTEsImV4cCI6MTYyNDkyMzI1MX0.6kKT4vCvBTj46C3FNIBAvTapwoNnxe5mwGFwd6vQd1U'
+        const key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
         try{
             const response = await fetch(url,{
                 method:'POST',
@@ -28,18 +31,23 @@ class NewsFeed extends Component {
             })
             const post = await response.json()
             if(response.ok){
-                    console.log(post);
-                    this.setState({
-                        ...this.state.addPost
-                    })
-                }else{
-                    console.log('error')
+                alert('posted')
+                console.log('post',post);
+                this.props.newPost(post)
+                this.setState({
+                    addPost:{
+                        text:''
                 }
+                })
+            }else{
+                console.log('error')
+            }
             
 
         }catch(error){
             console.log(error);
         }
+    }
     }
     render() {
 
@@ -50,11 +58,11 @@ class NewsFeed extends Component {
                    
                 <Card.Body>
                 <Form className="d-flex">
-                <svg xmlns="http://www.w3.org/2000/svg"id='imgAvatar' width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                <img src={this.props.profilePic} alt="profilePic" id='imgAvatar'/>
+               {/*  <svg xmlns="http://www.w3.org/2000/svg"id='imgAvatar' width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-                        
-                        </svg>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>                        
+                        </svg> */}
                 <FormControl
                     type="search"
                     placeholder="Start a post"
@@ -62,15 +70,16 @@ class NewsFeed extends Component {
                     aria-label="Search"
                     id="postText"
                     value={this.state.addPost.text}
+                    onKeyDown={(e)=>this._addPOST(e)}
                     onChange={(e)=>this.setState({
                         addPost:{
                             text: e.target.value
                         }
                     })}
                 />
-                        <Button 
+                        {/* <Button 
                         variant=""className="btn-primary" onClick={(e)=>
-                        this.addPOST(e)}>post</Button>
+                        this.addPOST(e)}>post</Button> */}
                  </Form>
                     
                   <div className="d-flex justify-content-between">

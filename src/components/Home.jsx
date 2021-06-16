@@ -4,11 +4,26 @@ import HomePost from './HomePost'
 import NewsFeed from './NewsFeed'
 import HomePutDel from './HomePutDel'
 import HomeLeft2 from './HomeLeft2';
+import HomeLeft from './HomeLeft';
 import ProfileCardOne from './ProfileCardOne';
 import HomeLeft from './HomeLeft';
 
 class Home extends Component {
+
+    state ={
+        newsFeed:null
+    }
+
+    newPost =(postVal)=>{
+        this.setState({
+            newsFeed:postVal
+        })
+    }
+
+
     render() {
+
+
         return (
             <Container fluid className="">
                <Row className="justify-content-between profilePage">
@@ -28,7 +43,7 @@ class Home extends Component {
 
                            {/* Hasham's POST method Component*/}
 
-                           <HomePost/>
+                           <HomePost newPost={this.newPost} profilePic={this.props.profilePic}/>
                          {/* <ProfileCardOne/> */}
 
                            {/*   <HomePost/> */}
@@ -38,8 +53,8 @@ class Home extends Component {
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
-
-                           {/* <NewsFeed/>                         */}
+                          
+                           <NewsFeed newPost ={this.state.newsFeed}/>    
                         
                        </div>
 
