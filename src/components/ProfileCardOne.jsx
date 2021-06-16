@@ -2,7 +2,7 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { AiFillCamera } from 'react-icons/ai';
 import EditModal from './EditModal';
-import { Card, Row, Col } from 'react-bootstrap';
+import { Card, Row, Col, Button } from 'react-bootstrap';
 import '../css/ProfileCardOne.css';
 import background from '../assets/backgroundCover.png';
 
@@ -33,6 +33,11 @@ class ProfileCardOne extends Component {
                                 <Link to="" style={{ color: 'blue' }} className='mt-1'>
                                   <p>19 connections</p>
                                 </Link>
+                                <div className="d-inline">
+                                    <Button className="badge-pill btn1" variant="primary">Open to</Button>
+                                    <Button className="badge-pill mx-2 btn2" variant="outline-secondary">Add section</Button>
+                                    <Button className="badge-pill btn3" variant="outline-secondary">More</Button>                                   
+                                </div>
                             </Col>
 
                             <Col className="text-right" md={4}>
