@@ -4,23 +4,24 @@ import './../css/FooterList.css'
 
 const FooterList = () => {
     return (
-       <Col>
-          <ul className="Footerlist mb-1">
-             <li><Link>About</Link></li>
-             <li><Link>Accessibility</Link></li>
-             <li><Link>Help Center</Link></li>
+        <div>
+       <Col className="ListFooter my-2">
+          <ul className="Footerlist mb-0 ">
+             <li><Link style={{fontWeight:"400"}}>About</Link></li>
+             <li><Link style={{fontWeight:"400"}}>Accessibility</Link></li>
+             <li><Link style={{fontWeight:"400"}}>Help Center</Link></li>
             </ul>
             <ul className="Footerlist my-0">
-             <li><Link> Privacy & Terms</Link></li>
-             <li><Link>Ad Choices</Link></li>
+             <li><Link style={{fontWeight:"400"}}> Privacy & Terms</Link></li>
+             <li><Link style={{fontWeight:"400"}}>Ad Choices</Link></li>
             </ul>
             <ul className="Footerlist my-0">
-             <li> <Link>Advertising</Link></li>
-             <li><Link>Business Services</Link></li>
+             <li> <Link style={{fontWeight:"400"}}>Advertising</Link></li>
+             <li><Link style={{fontWeight:"400"}}>Business Services</Link></li>
             </ul>
             <ul className="Footerlist my-0">
-             <li> <Link>Get the LinkedIn App</Link></li>
-             <li><Link>More</Link></li>
+             <li> <Link style={{fontWeight:"400"}}>Get the LinkedIn App</Link></li>
+             <li><Link style={{fontWeight:"400"}}>More</Link></li>
             </ul>
        
      <div className="text-center mt-2">
@@ -33,6 +34,7 @@ const FooterList = () => {
  </div>
               
        </Col>
+       </div>
 );
 }
  

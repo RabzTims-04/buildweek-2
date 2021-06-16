@@ -5,16 +5,20 @@
     text-align:center;
     padding-left: 0;
 }
+
 .Footerlist li{
     padding:0 .25em;
     font-size:.775em;
     color:rgb(100,100,100);
     display: flex;
-    margin: .2rem .8rem;
+    margin: .2rem .4rem;
 }
 
 .FooterListCopyRight{ 
     display:inline;
-    color:rgb(100,100,100);
+    color:rgb(0, 0, 0);
     font-size:.775em;
+}
+.ListFooter{
+    margin: 1.6rem 0rem;
 }
