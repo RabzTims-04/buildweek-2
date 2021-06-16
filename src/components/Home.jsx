@@ -8,7 +8,21 @@ import ProfileCardOne from './ProfileCardOne';
 
 
 class Home extends Component {
+
+    state ={
+        newsFeed:null
+    }
+
+    newPost =(postVal)=>{
+        this.setState({
+            newsFeed:postVal
+        })
+    }
+
+
     render() {
+
+
         return (
             <Container fluid className="">
                <Row className="justify-content-between profilePage">
@@ -26,7 +40,7 @@ class Home extends Component {
 
                            {/* Hasham's POST method Component*/}
 
-                           <HomePost/>
+                           <HomePost newPost={this.newPost} profilePic={this.props.profilePic}/>
                          {/* <ProfileCardOne/> */}
 
                            {/*   <HomePost/> */}
@@ -36,8 +50,8 @@ class Home extends Component {
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
-                             <HomePutDel />
-                           {/* <NewsFeed/>                         */}
+                            {/*  <HomePutDel /> */}
+                           <NewsFeed newPost ={this.state.newsFeed}/>    
                         
                        </div>
 

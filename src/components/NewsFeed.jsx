@@ -22,6 +22,11 @@ class NewsFeed extends Component {
             ]
         }
 
+        componentDidUpdate =(prevProps)=>{
+            if(prevProps.newPost !== this.props.newPost)
+           this.newsFeedFetch()
+        }
+
     componentDidMount =()=>{
         this.newsFeedFetch()
     }
@@ -98,7 +103,7 @@ class NewsFeed extends Component {
 
                     <div style={{fontSize:'0.8em'}} className="d-flex flex-row mt-2 mb-0">
 
-                       <p className="mb-0">{news.user.bio}</p> 
+                       <p className="mb-0">{news.text}</p> 
 
                     </div>  
                 </Container>                           
