@@ -8,8 +8,8 @@
     transition: top 0.3s;
     /* transform:translateY(-100%) */
     z-index: 9998;
-  transition: all 0.5s; &.scrollUp;
-    transform: translateY(-80px);
+  /* transition: all 0.5s; &.scrollUp; */
+    /* transform: translateY(-80px); */
 }
 p{
     font-size: 12px;
