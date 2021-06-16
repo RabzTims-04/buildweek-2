@@ -2,7 +2,7 @@ import { Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
 import {Link, withRouter} from 'react-router-dom'
 import '../css/Head.css';
 
-const Head = () => {
+const Head = (props) => {
   return (
     <Navbar style={{zIndex:'10'}} expand='lg' id='navbar' className='fixed-top'>
       <Navbar.Brand href='#home' className='center'>
@@ -56,7 +56,7 @@ const Head = () => {
               width='16'
               height='16'
               fill='currentColor'
-              className='bi bi-briefcase-fill'
+              className='bi bi-briefcase-fill pr-2'
               viewBox='0 0 16 16'
             >
               <path d='M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v1.384l7.614 2.03a1.5 1.5 0 0 0 .772 0L16 5.884V4.5A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5z' />
@@ -91,10 +91,12 @@ const Head = () => {
             Notifications
           </Nav.Link>
           <NavDropdown
-            className='menuText'
+            className='menuText pt-1'
             title={
-              <Link to="/">
-                <svg
+              <>
+              <Link className="d-flex flex-column" to="/">
+                <img src={props.profilePic} alt="profile-pic" id="NavprofilePhoto" className="img-fluid"/>
+                {/* <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'
                   height='16'
@@ -107,9 +109,10 @@ const Head = () => {
                     fillRule='evenodd'
                     d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z'
                   />
-                </svg>
-                Me
-              </Link>
+                </svg> */}
+                 </Link>
+                <span>Me</span>
+             </>
             }
             id='basic-nav-dropdown'
           >
