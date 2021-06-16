@@ -3,6 +3,8 @@ import { Card, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import EditExp from './EditExp';
 import '../css/Experience.css'
+import AddExpModal from './AddExpModal';
+
 
 class Experience extends Component {
 
@@ -95,9 +97,8 @@ class Experience extends Component {
                             <Col>
                                  <h6>Experience</h6>
                             </Col>
-
                             <Col className="text-right">
-                               POST
+                                <AddExpModal className="ml-5" style={{color:"gray", height:"30px"}}/>
                             </Col>
                         </Row> 
 
