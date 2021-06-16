@@ -3,6 +3,8 @@ import { Container, Row, Col } from 'react-bootstrap'
 import HomePost from './HomePost'
 import NewsFeed from './NewsFeed'
 import HomePutDel from './HomePutDel'
+import HomeLeft from './HomeLeft';
+import ProfileCardOne from './ProfileCardOne';
 
 
 class Home extends Component {
@@ -13,22 +15,29 @@ class Home extends Component {
 
                    <Col sm={2} className="py-3 d-flex flex-column">
                        {/* {Profile} */}
+                       <HomeLeft/>
 
-                   </Col>
+                   </Col>                
 
                    <Col sm={7} className="py-3 d-flex flex-column">
+
                        {/* Main */}
                        <div>
 
                            {/* Hasham's POST method Component*/}
+
+                           <HomePost/>
+                         {/* <ProfileCardOne/> */}
+
                            {/*   <HomePost/> */}
                          
+
                        </div>
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
 
-                           <NewsFeed/>                        
+                           {/* <NewsFeed/>                         */}
                         
                        </div>
 
@@ -37,7 +46,11 @@ class Home extends Component {
                    <Col sm={3} className="py-3 d-flex flex-column">
                        {/* right column */}
                        {/* Aymane PUT DELETE method component */}
+
+                       {/* <HomePutDel/> */}
+
                       {/*  <HomePutDel/> */}
+
 
                    </Col>
 

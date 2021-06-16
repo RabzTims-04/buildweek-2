@@ -32,7 +32,7 @@ const Head = () => {
             </svg>
             Home
           </Link>
-          <Nav.Link href='#home' className='menuText'>
+          <Nav.Link href='#' className='menuText'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
@@ -50,7 +50,7 @@ const Head = () => {
             </svg>
             My Network
           </Nav.Link>
-          <Nav.Link href='#link' className='menuText'>
+          <Nav.Link href='#' className='menuText'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
@@ -64,7 +64,7 @@ const Head = () => {
             </svg>
             Jobs
           </Nav.Link>
-          <Nav.Link href='#link' className='menuText'>
+          <Nav.Link href='#' className='menuText'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
@@ -77,7 +77,7 @@ const Head = () => {
             </svg>
             Messaging
           </Nav.Link>
-          <Nav.Link href='#link' className='menuText'>
+          <Nav.Link href='#' className='menuText'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'

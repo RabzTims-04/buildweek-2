@@ -1,0 +1,113 @@
+
+import{Card,Button,Form,FormControl} from 'react-bootstrap'
+import'../css/HomePost.css'
+
+
+import { Component } from 'react';
+// const postApi = fetch('https://striveschool-api.herokuapp.com/api/posts/',{
+// method:'Post',)}
+class NewsFeed extends Component {
+
+    state = {
+        addPost:{
+        text:''
+    }
+    }
+    addPOST = async (e)=>{
+        const url ='https://striveschool-api.herokuapp.com/api/posts/'
+        const key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3ZTc3MmMxOTMwNTAwMTU4NzE1M2EiLCJpYXQiOjE2MjM3MTM2NTEsImV4cCI6MTYyNDkyMzI1MX0.6kKT4vCvBTj46C3FNIBAvTapwoNnxe5mwGFwd6vQd1U'
+        try{
+            const response = await fetch(url,{
+                method:'POST',
+                body: JSON.stringify(this.state.addPost),
+                headers:{
+                    'Authorization':key,
+                    'Content-Type':'application/json'
+                }
+                
+            })
+            const post = await response.json()
+            if(response.ok){
+                    console.log(post);
+                    this.setState({
+                        ...this.state.addPost
+                    })
+                }else{
+                    console.log('error')
+                }
+            
+
+        }catch(error){
+            console.log(error);
+        }
+    }
+    render() {
+
+        return (
+
+          
+               <Card>
+                   
+                <Card.Body>
+                <Form className="d-flex">
+                <svg xmlns="http://www.w3.org/2000/svg"id='imgAvatar' width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                        
+                        </svg>
+                <FormControl
+                    type="search"
+                    placeholder="Start a post"
+                    className="mr-2"
+                    aria-label="Search"
+                    id="postText"
+                    value={this.state.addPost.text}
+                    onChange={(e)=>this.setState({
+                        addPost:{
+                            text: e.target.value
+                        }
+                    })}
+                />
+                        <Button 
+                        variant=""className="btn-primary" onClick={(e)=>
+                        this.addPOST(e)}>post</Button>
+                 </Form>
+                    
+                  <div className="d-flex justify-content-between">
+                    <Button variant="" className='d-flex' id='photo'>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                    <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                    <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+                    </svg>
+                      Photo  </Button>
+                      <Button variant="" className='d-flex' id='video'>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-btn-fill" viewBox="0 0 16 16">
+                    <path d="M0 12V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm6.79-6.907A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"/>
+                    </svg>
+                      Video  </Button>
+                      <Button variant="" className='d-flex' id="event">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-event" viewBox="0 0 16 16">
+                        <path d="M11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                    </svg>
+                      Event  </Button>
+                      <Button variant="" className='d-flex'id='article'>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-layout-text-sidebar-reverse" viewBox="0 0 16 16">
+                            <path d="M12.5 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm0 3a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5zm.5 3.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 .5-.5zm-.5 2.5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1h5z"/>
+                            <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2zM4 1v14H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h2zm1 0h9a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5V1z"/>
+                            </svg>
+                             Write article </Button>
+                      </div>
+                </Card.Body>
+                
+                </Card> 
+                
+               
+                
+          
+        );
+    }
+}
+
+export default NewsFeed;

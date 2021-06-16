@@ -13,10 +13,11 @@ class ProfileCardOne extends Component {
         <Card.Img className='cardImg' variant='top' src={background} />
 
 
-                         <Link to="">
+                         <Link to="/">
                          <AiFillCamera className="camerabtn" style={{color:'blue', position:'absolute', right:'4%', top:'4%'}} size={20}/></Link>
                     
-                    <Card.Body>                       
+                    <Card.Body> 
+                                            
                         <img className="profilePic img-fluid" src={this.props.profileData.image} alt="profile-pic"/> 
                                          
                         <Row className='mb-4 justify-content-between'>
