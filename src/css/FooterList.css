@@ -10,11 +10,9 @@
     font-size:.775em;
     color:rgb(100,100,100);
     display: flex;
-    margin: .4rem .8rem;
+    margin: .2rem .8rem;
 }
-.FooterListBottom li{ 
-    display:inline;
-}
+
 .FooterListCopyRight{ 
     display:inline;
     color:rgb(100,100,100);

@@ -1,4 +1,5 @@
 import {Row, Col} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import './../css/List.css'
 
 const CourseList = () => {
@@ -16,15 +17,15 @@ const CourseList = () => {
         <Col>
 
         <ol className="list">
-            <li className="list-item">Introduction to React.js <br>
+            <li className="list-item"><Link>Introduction to React.js</Link> <br>
                 </br>
                 <span className="details">Rabia Ilyas</span>
             </li>
-            <li className="list-item">Full-Stack Boot Camp <br>
+            <li className="list-item"><Link>Full-Stack Boot Camp </Link><br>
                 </br>
                 <span className="details"> Aymane Abssi & Hasham Zafar </span>
             </li>
-            <li className="list-item">Intro to Game Development With Unity<br>
+            <li className="list-item"><Link>Intro to Game Development With Unity</Link><br>
                 </br>
                 <span className="details"> Carl Dawkins</span>
             </li>

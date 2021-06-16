@@ -6,28 +6,28 @@ const FooterList = () => {
     return (
        <Col>
           <ul className="Footerlist mb-1">
-             <li>About</li>
-             <li>Accessibility</li>
-             <li>Help Center</li>
+             <li><Link>About</Link></li>
+             <li><Link>Accessibility</Link></li>
+             <li><Link>Help Center</Link></li>
             </ul>
             <ul className="Footerlist my-0">
-             <li> Privacy & Terms</li>
-             <li>Ad Choices</li>
+             <li><Link> Privacy & Terms</Link></li>
+             <li><Link>Ad Choices</Link></li>
             </ul>
             <ul className="Footerlist my-0">
-             <li> Advertising</li>
-             <li>Business Services</li>
+             <li> <Link>Advertising</Link></li>
+             <li><Link>Business Services</Link></li>
             </ul>
             <ul className="Footerlist my-0">
-             <li> Get the LinkedIn App</li>
-             <li>More</li>
+             <li> <Link>Get the LinkedIn App</Link></li>
+             <li><Link>More</Link></li>
             </ul>
        
      <div className="text-center mt-2">
        
         <img
             src='./assets/img/linkedin_logo.jpg'
-            alt='logo' style={{ width: "4.8rem", height: "1rem"}}
+            alt='logo' style={{ width: "4.2rem", height: ".9rem"}}
           />
             <span className="FooterListCopyRight">LinkedIn Corporation © 2021</span>
  </div>

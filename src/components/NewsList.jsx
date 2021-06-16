@@ -1,4 +1,5 @@
 import {Row, Col} from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import './../css/List.css'
 
 const NewsList = () => {
@@ -16,23 +17,23 @@ const NewsList = () => {
                 <Col>
 
                 <ul className="list">
-                    <li className="list-item">The revolution will not be televised <br>
+                    <li className="list-item"><Link>The revolution will not be televised </Link><br>
                         </br>
                         <span className="details"> 10h ago • 200 readers</span>
                     </li>
-                    <li className="list-item">The revolution will not be televised <br>
+                    <li className="list-item"><Link>The revolution will not be televised </Link><br>
                         </br>
                         <span className="details"> 10h ago • 200 readers</span>
                     </li>
-                    <li className="list-item">The revolution will not be televised <br>
+                    <li className="list-item"><Link>The revolution will not be televised </Link> <br>
+                        </br>
+                        <span className="details">10h ago • 200 readers</span>
+                    </li>
+                    <li className="list-item"><Link>The revolution will not be televised </Link><br>
                         </br>
                         <span className="details"> 10h ago • 200 readers</span>
                     </li>
-                    <li className="list-item">The revolution will not be televised <br>
-                        </br>
-                        <span className="details"> 10h ago • 200 readers</span>
-                    </li>
-                    <li className="list-item">The revolution will not be televised <br>
+                    <li className="list-item"><Link>The revolution will not be televised </Link><br>
                         </br>
                         <span className="details"> 10h ago • 200 readers</span>
                     </li>
