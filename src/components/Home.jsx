@@ -13,19 +13,25 @@ class Home extends Component {
             <Container fluid className="">
                <Row className="justify-content-between profilePage">
 
-                   <Col sm={2} className="py-5 d-flex flex-column">
+                   <Col sm={2} className="py-3 d-flex flex-column">
                        {/* {Profile} */}
                        <HomeLeft/>
 
-                   </Col>
+                   </Col>                
 
-                   <Col sm={6} className="py-5 d-flex flex-column">
+                   <Col sm={7} className="py-3 d-flex flex-column">
+
                        {/* Main */}
                        <div>
 
                            {/* Hasham's POST method Component*/}
+
                            <HomePost/>
                          {/* <ProfileCardOne/> */}
+
+                           {/*   <HomePost/> */}
+                         
+
                        </div>
 
                        <div className="mt-3">
@@ -37,10 +43,14 @@ class Home extends Component {
 
                    </Col>
 
-                   <Col sm={3} className="py-5 d-flex flex-column">
+                   <Col sm={3} className="py-3 d-flex flex-column">
                        {/* right column */}
                        {/* Aymane PUT DELETE method component */}
+
                        {/* <HomePutDel/> */}
+
+                      {/*  <HomePutDel/> */}
+
 
                    </Col>
 
