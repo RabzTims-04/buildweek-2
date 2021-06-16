@@ -5,3 +5,22 @@ body{
 #plusIcon svg{
     margin: 0;
 }
+
+.newsPage{
+    padding: 0 50px;
+    margin-top: 50px;
+}
+
+#NavprofilePhoto{
+    width: 25px;
+    border-radius: 50%;
+}
+
+#postText{
+    border:1px solid lightgrey!important;
+}
+
+.newspostbtn span{
+    font-size: medium;
+}
+

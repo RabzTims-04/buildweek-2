@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
 import HomePutDel from './HomePutDel'
-import { Container, Card, Col, Button, DropdownButton, Dropdown } from 'react-bootstrap'
+import { Container, Card, Col, Button, Dropdown } from 'react-bootstrap'
 import '../css/NewsFeed.css'
 
 class NewsFeed extends Component {
@@ -86,11 +86,11 @@ class NewsFeed extends Component {
             ?this.state.newsFeeds.map((news,i) => <Card key={news._id} className='rounded mt-3'>
                <Container className="pt-3 pr-0 pl-3 pb-0 mb-0">
                     <div className="d-flex flex-row">
-                        <Col sm={1} className="p-0 mt-1">
-                            <img src={news.user.image} alt="p" className="img-fluid news-Img" />
+                        <Col xs={1} className="p-0 mt-1">
+                            <img src={news.user.image} alt="profile" className="img-fluid news-Img" />
                         </Col>
 
-                        <Col sm={9} className="d-flex flex-column">
+                        <Col xs={9} className="d-flex flex-column">
                             <Link to=""><p className="p-0 m-0">{news.user.name} {news.user.surname}</p></Link>
                             <span style={{fontSize:'0.7em'}} className="text-muted">{news.user.title}</span>
                             <div className="d-flex flex-row">
@@ -102,7 +102,7 @@ class NewsFeed extends Component {
                             
                         </Col>
 
-                        <Col sm={2} className="pr-0">
+                        <Col xs={2} className="pr-0">
                         <Dropdown>
                             <Dropdown.Toggle id="dropdown-news">
                                 <svg

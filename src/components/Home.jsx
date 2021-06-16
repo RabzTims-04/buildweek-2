@@ -6,11 +6,9 @@ import NewsFeed from './NewsFeed'
 import NewsList from './NewsList'
 import CourseList from './CourseList'
 import FooterList from './FooterList'
-import HomePutDel from './HomePutDel'
 import HomeLeft2 from './HomeLeft2';
 import HomeLeft from './HomeLeft';
-import ProfileCardOne from './ProfileCardOne';
-import HomeLeft from './HomeLeft';
+
 
 class Home extends Component {
 
@@ -25,64 +23,45 @@ class Home extends Component {
     }
 
 
+
+
     render() {
 
 
         return (
             <Container fluid className="">
-               <Row className="justify-content-between profilePage">
+               <Row className="justify-content-between newsPage">
 
-                   <Col sm={2} className="py-3 d-flex flex-column">
+                   <Col lg={3} className="py-5 d-none d-lg-flex flex-column">
                        {/* {Profile} */}
-                       <HomeLeft/>
+                       <HomeLeft profilePic={this.props.profilePic}/>
                        <HomeLeft2/>
 
                    </Col>                
 
-                   <Col sm={7} className="py-3 d-flex flex-column">
-
-
-
-                   
-
+                   <Col lg={6} className="py-5 d-flex flex-column">                 
 
                        {/* Main */}
                        <div>
-
                            {/* Hasham's POST method Component*/}
 
-                           {/* <HomePost/> */}
-
-
                            <HomePost newPost={this.newPost} profilePic={this.props.profilePic}/>
-                         {/* <ProfileCardOne/> */}
-
-                           {/*   <HomePost/> */}
-
-                         
 
                        </div>
 
                        <div className="mt-3">
                            {/* Rabia's GET method Component */}
-
-
-                           {/* <NewsFeed/>                         */}
-
                           
-                           <NewsFeed newPost ={this.state.newsFeed}/>    
-
+                           <NewsFeed newPost ={this.state.newsFeed}/>   
                         
                        </div>
 
                    </Col>
 
 
-                   <Col  md={3} className="py-3 d-flex flex-column">
+                   <Col  lg={3} className="py-5 d-flex flex-column">
                        {/* right column */}
-                       {/* Aymane PUT DELETE method component */}
-                       {/* <HomePutDel/> */}
-                     
+                       {/* Carl's component */}                     
                         <NewsList/>
                         <CourseList/>
                         <FooterList/>

@@ -20,7 +20,7 @@ function App() {
  
       <Router>
        
-        <Head/>
+        <Head profilePic={img}/>
         <Route exact path ="/" component={SecondNav}/>
         <Route exact path="/" render={(routerProps)=><Profile {...routerProps} profilePic={profile}/>}/>
         <Route exact path ="/feed" render={(routerProps)=><Home {...routerProps} profilePic ={img} />}/>
