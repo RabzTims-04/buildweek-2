@@ -2,9 +2,11 @@ import { Component } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import HomePost from './HomePost'
 import NewsFeed from './NewsFeed'
+import HomePutDel from './HomePutDel'
+import HomeLeft2 from './HomeLeft2';
 import HomeLeft from './HomeLeft';
 import ProfileCardOne from './ProfileCardOne';
-
+import HomeLeft from './HomeLeft';
 
 class Home extends Component {
 
@@ -29,10 +31,12 @@ class Home extends Component {
                    <Col sm={2} className="py-3 d-flex flex-column">
                        {/* {Profile} */}
                        <HomeLeft/>
+                       <HomeLeft2/>
 
                    </Col>                
 
                    <Col sm={7} className="py-3 d-flex flex-column">
+
 
                        {/* Main */}
                        <div>
