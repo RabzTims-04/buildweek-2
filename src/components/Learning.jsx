@@ -5,8 +5,8 @@ const Learning = () => {
     <div className='learning'>
       <div className='learning_title'>
         <img
-          src='https://lh3.googleusercontent.com/proxy/kK3IhM5qUjcBM297jeE4f4kfPnBPGYpvVswbDDQQTcZm8quguivl2vGXzTS0HOwWPsrLFNzuftscVi26d1VeO0HrFqsqLPiGZVxr2gLqhVRerQrEPxrWMVM5VwfYfdc-lpQ'
-          alt=''
+          src='https://image.flaticon.com/icons/png/512/174/174857.png'
+          alt='logo'
         />
         <div>Learning</div>
       </div>
