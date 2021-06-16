@@ -1,0 +1,21 @@
+.number-span:after{
+    content: "\00b7";
+    font-size: 0.9rem;
+    line-height: 1;
+    font-weight: 400;
+    color: rgba(0,0,0,.9);
+    color: var(--color-text-low-emphasis);
+    vertical-align: top;
+    font-weight: 700;
+    display: inline;
+    margin-left: 4px;
+}
+
+.comments-btn{
+    border-bottom: 1px solid lightgray;
+}
+
+/* .newsfeed-Cardbtn button{
+    width: 100%;
+    padding:0;
+} */

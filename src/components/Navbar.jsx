@@ -93,7 +93,7 @@ const Head = () => {
           <NavDropdown
             className='menuText'
             title={
-              <span>
+              <Link to="/">
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'
@@ -109,7 +109,7 @@ const Head = () => {
                   />
                 </svg>
                 Me
-              </span>
+              </Link>
             }
             id='basic-nav-dropdown'
           >

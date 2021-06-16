@@ -21,7 +21,7 @@ class Home extends Component {
                        <div>
 
                            {/* Hasham's POST method Component*/}
-                           <HomePost/>
+                           {/*   <HomePost/> */}
                          
                        </div>
 
@@ -37,7 +37,7 @@ class Home extends Component {
                    <Col sm={3} className="py-5 d-flex flex-column">
                        {/* right column */}
                        {/* Aymane PUT DELETE method component */}
-                       <HomePutDel/>
+                      {/*  <HomePutDel/> */}
 
                    </Col>
 
