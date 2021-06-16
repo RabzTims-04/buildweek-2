@@ -1,8 +1,6 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
-import { AiFillCamera } from 'react-icons/ai'
-import EditModal from './EditModal' 
-import { Jumbotron, Container, Button, Card, Row, Col } from 'react-bootstrap';
+import { Container, Card, Row, Col } from 'react-bootstrap';
 import '../css/YourDashboard.css'
 
 class YourDashboard extends Component {
@@ -15,21 +13,21 @@ class YourDashboard extends Component {
                         <Row className="mt-3 justify-content-center">
                             <Card className="dash1 d-flex flex-row w-100">
                                 <Col md={4}>
-                                    <Link>
+                                    <Link to="">
                                         <p className="viewspan">10</p>
                                         <p className="mb-2 text-muted">Who viewed your profile</p>
                                     </Link>
                                 </Col>
 
                                 <Col style={{borderRight:'1px solid lightgrey', borderLeft:'1px solid lightgrey'}} md={4}>
-                                   <Link>
+                                   <Link to="">
                                         <p className="viewspan">10</p>
                                         <p className="mb-2 text-muted">Article views</p>
                                    </Link>
                                 </Col>
 
                                 <Col md={4}>
-                                    <Link>
+                                    <Link to="">
                                         <p className="viewspan">10</p>
                                         <p className="mb-2 text-muted">Search appearances</p>
                                     </Link>                                 
@@ -49,7 +47,7 @@ class YourDashboard extends Component {
 
                                     </Col> 
                                     <Col className="p-0" xl={11} style={{borderBottom:'1px solid lightgrey'}}>
-                                        <Link>
+                                        <Link to="">
                                             <span className="">Creator Mode: <span>Off</span></span>
                                             <p className=" text-muted">Grow your audience and get discovered by highlighting content on your profile</p>
                                         </Link>
@@ -64,7 +62,7 @@ class YourDashboard extends Component {
 
                                     </Col> 
                                     <Col className="p-0" xl={11} style={{borderBottom:'1px solid lightgrey'}}>
-                                        <Link>
+                                        <Link to="">
                                             <span className="">My Network</span>
                                             <p className=" text-muted">Manage your connections, events and interests.</p>
                                         </Link>
@@ -78,7 +76,7 @@ class YourDashboard extends Component {
                                     </svg>
                                     </Col> 
                                     <Col className="p-0" xl={11} style={{borderBottom:'1px solid lightgrey'}}>
-                                        <Link>
+                                        <Link to="">
                                             <span className="">Salary insights</span>
                                             <p className=" text-muted">See how your salary compares to others in the community.</p>
                                         </Link>
@@ -93,7 +91,7 @@ class YourDashboard extends Component {
 
                                     </Col> 
                                     <Col className="p-0" xl={11}>
-                                        <Link>
+                                        <Link to="">
                                             <span className="">My items</span>
                                             <p className="text-muted">Keep track of your jobs, courses and articles.</p>
                                         </Link>

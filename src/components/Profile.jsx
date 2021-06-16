@@ -8,7 +8,6 @@ import YourDashboard from './YourDashboard';
 import PeopleAlsoViewed from './PeopleAlsoViewed';
 import Learning from './Learning';
 import Experience from './Experience'
-import EditExp from './EditExp';
 /* import Dashboard from './Dashboard'; */
 import Messaging from './Messaging';
 
@@ -86,7 +85,7 @@ class Profile extends Component {
 
                        <div className="mt-3">
                          <ProfileStrength/>
-                           <EditExp />
+                        
                        </div>
 
                        <div className="mt-3">
