@@ -19,23 +19,23 @@ const NewsList = () => {
                 <ul className="list">
                     <li className="list-item"><Link>How to not get #MeToo'd</Link><br>
                         </br>
-                        <span className="details"> 10h ago • 3456 readers</span>
+                        <span className="details"> 6h ago • 3456 readers</span>
                     </li>
-                    <li className="list-item"><Link>The revolution will not be televised </Link><br>
+                    <li className="list-item"><Link>Bringing muffins to work a good idea? </Link><br>
                         </br>
-                        <span className="details"> 10h ago • 988 readers</span>
+                        <span className="details"> 2h ago • 283 readers</span>
                     </li>
                     <li className="list-item"><Link>Imposter Syndrome epidemic</Link> <br>
                         </br>
-                        <span className="details">10h ago • 1048 readers</span>
+                        <span className="details">4h ago • 1048 readers</span>
                     </li>
-                    <li className="list-item"><Link>Autonomy in the workplace </Link><br>
+                    <li className="list-item"><Link>Got grilled by my boss in front of everybody </Link><br>
                         </br>
-                        <span className="details"> 10h ago • 607 readers</span>
+                        <span className="details"> 5h ago • 607 readers</span>
                     </li>
-                    <li className="list-item"><Link>Let's talk about Cancel Culture </Link><br>
+                    <li className="list-item"><Link>Let's talk about #CancelCulture </Link><br>
                         </br>
-                        <span className="details"> 10h ago • 5982 readers</span>
+                        <span className="details"> 1h ago • 5982 readers</span>
                     </li>
                 </ul>
                 </Col>
