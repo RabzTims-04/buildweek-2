@@ -1,28 +1,30 @@
 
-import{ Card,Button,Form,FormControl, Container } from 'react-bootstrap'
+import{ Card,Button,Form,FormControl, Container, Modal } from 'react-bootstrap'
 import'../css/HomePost.css'
 import { Component, React } from 'react';
 
 class NewsFeed extends Component {
 
     state = {
+        show: false,
         addPost:{
         text:''
     }
     }
 
     _addPOST = async (e)=>{
-        let formData = new FormData()   
-        formData.append('post', this.state.addPost.image) 
+    
       console.log(e.key);
         if(e.key ==='Enter'){
+            let formData = new FormData()   
+            formData.append('post', this.state.addPost.image) 
             e.preventDefault()      
         const url ='https://striveschool-api.herokuapp.com/api/posts/'
         const key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
         try{
             const response = await fetch(url,{
                 method:'POST',
-                body: JSON.stringify(this.state.addPost),
+                body: JSON.stringify({text:this.state.addPost.text}),
                 headers:{
                     'Authorization':key,
                     'Content-Type':'application/json'
@@ -36,20 +38,21 @@ class NewsFeed extends Component {
             console.log(formData);  
             console.log(formData.get('post')); 
             if(response.ok){
-                try {
-                    const imgresp = await fetch(url + postid,{
-                        method:'POST',
-                        body:formData,
-                        headers:{
-                            'Authorization': key
-                        }
-                    })
-                    console.log(imgresp);
-                } catch (error) {
-                    console.log(error);
-                    
-                }
-            
+                if(this.state.addPost.image){
+                    try {
+                        const imgresp = await fetch(url + postid,{
+                            method:'POST',
+                            body:formData,
+                            headers:{
+                                'Authorization': key
+                            }
+                        })
+                        console.log(imgresp);
+                    } catch (error) {
+                        console.log(error);
+                        
+                    }
+                }            
 /*                 const imgdata = await imgresp.json(); */
                 /* console.log(imgdata); */
                 /* if(imgresp.ok){
@@ -67,6 +70,7 @@ class NewsFeed extends Component {
                 console.log('post',post);
                 this.props.newPost(post)
                 this.setState({
+                    ...this.state,
                     addPost:{
                         text:''
                 }
@@ -81,6 +85,22 @@ class NewsFeed extends Component {
         }
     }
     }
+
+    handleClose = () => {
+        this.setState({
+          ...this.state,
+          show: false,
+        });
+      };
+    
+      handleShow = () => {
+        this.setState({
+          ...this.state,
+          show: true,
+        });
+      };
+
+
     render() {
 
         return (
@@ -99,6 +119,7 @@ class NewsFeed extends Component {
                     value={this.state.addPost.text}
                     onKeyDown={(e)=>this._addPOST(e)}
                     onChange={(e)=>this.setState({
+                        ...this.state,
                         addPost:{...this.state.addPost, 
                             text: e.target.value
                         }
@@ -109,26 +130,36 @@ class NewsFeed extends Component {
                  <Container className="p-0">                  
                   <div className="d-flex newspostbtn justify-content-center">
                     <Button variant="" id='photo' className="d-block d-lg-flex flex-row pl-0 pt-0 pb-3">
-          
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
-                        <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                        <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
-                        </svg>
-                       <input 
-                        onClick={(e)=> {e.stopPropagation()
-                         return true}}
-                          type="file"
-                    /* id="image" */
-                           onChange={(e) => {this.setState({
-                            addPost:{...this.state.addPost, 
-                                image: e.target.files[0]}
-                    })
-                       console.log(e.target.files[0])}}
-                    />
-                    <label for='image'>Click me</label>
-                
-                    </Button>
-
+                        <div>
+                                 <label className="p-0 d-flex m-0" for="postimg">
+                                     <svg id='photo' xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
+                                <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
+                                </svg>
+                                </label>
+                                <input 
+                                    /* onClick={(e)=> {e.stopPropagation()
+                                    return true}} */
+                                    style={{display:'none'}}
+                                    type="file"
+                                    title="choose"
+                                    id="postimg"
+                                /* id="image" */
+                                    onChange={(e) => {this.setState({
+                                        ...this.state,
+                                        addPost:{...this.state.addPost, 
+                                            image: e.target.files[0]}
+                                })
+                                console.log(e.target.files[0])}}
+                                
+                                />
+                                </div>
+                                <div>
+                                    <span>Photo</span>
+                                </div>
+                                
+                        </Button>
+                    
                       <Button variant="" id='video' className="d-block d-lg-flex flex-row pl-1 pt-0 pb-3">
          
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-play-btn-fill" viewBox="0 0 16 16">
