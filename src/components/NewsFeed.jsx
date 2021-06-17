@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
 import HomePutDel from './HomePutDel'
+import PostProfilePic from './PostProfilePic';
 import { Container, Card, Col, Button, Dropdown } from 'react-bootstrap'
 import '../css/NewsFeed.css'
 
@@ -62,7 +63,7 @@ class NewsFeed extends Component {
                 }
             })
             const data = await response.json()
-            const newsFeeds = await data.slice(-10)
+            const newsFeeds = await data.slice(-10).reverse()
             if(response.ok){
                 console.log(newsFeeds);
                 this.setState({
@@ -113,7 +114,7 @@ class NewsFeed extends Component {
 
                             <Dropdown.Menu>
                                 <Dropdown.Item><HomePutDel editNews={this.editNews} id={news._id} text={news.text} filter={this.filter}/></Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                <Dropdown.Item><PostProfilePic id={news._id}/></Dropdown.Item>
                                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
@@ -128,7 +129,8 @@ class NewsFeed extends Component {
                 </Container>                           
                         
                 <Card.Body className="pr-0 pl-0 pt-3"> 
-                    <img src={this.img.imgcover[i]} alt="cover" className="img-fluid coverImg" />
+                {/* this.img.imgcover[i] */}
+                    <img src={news.image} alt="cover" className="img-fluid coverImg" />
                 </Card.Body>
 
                 <Container>

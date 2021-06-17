@@ -1,11 +1,8 @@
 
 import{ Card,Button,Form,FormControl, Container } from 'react-bootstrap'
 import'../css/HomePost.css'
+import { Component, React } from 'react';
 
-
-import { Component } from 'react';
-// const postApi = fetch('https://striveschool-api.herokuapp.com/api/posts/',{
-// method:'Post',)}
 class NewsFeed extends Component {
 
     state = {
@@ -13,10 +10,13 @@ class NewsFeed extends Component {
         text:''
     }
     }
+
     _addPOST = async (e)=>{
+        let formData = new FormData()   
+        formData.append('post', this.state.addPost.image) 
       console.log(e.key);
         if(e.key ==='Enter'){
-            e.preventDefault()
+            e.preventDefault()      
         const url ='https://striveschool-api.herokuapp.com/api/posts/'
         const key = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
         try{
@@ -26,11 +26,43 @@ class NewsFeed extends Component {
                 headers:{
                     'Authorization':key,
                     'Content-Type':'application/json'
-                }
-                
+                }                
             })
             const post = await response.json()
+            const postid= await post._id
+            console.log(postid);
+                                
+            console.log(this.state.addPost); 
+            console.log(formData);  
+            console.log(formData.get('post')); 
             if(response.ok){
+                try {
+                    const imgresp = await fetch(url + postid,{
+                        method:'POST',
+                        body:formData,
+                        headers:{
+                            'Authorization': key
+                        }
+                    })
+                    console.log(imgresp);
+                } catch (error) {
+                    console.log(error);
+                    
+                }
+            
+/*                 const imgdata = await imgresp.json(); */
+                /* console.log(imgdata); */
+                /* if(imgresp.ok){
+                        console.log('ok done',imgdata);
+                        this.setState({
+                            ...this.state,
+                            addPost: {
+                              post: ""
+                            }
+                          })
+                    }else{
+                        console.log('no idea lol');
+                    } */
                 alert('posted')
                 console.log('post',post);
                 this.props.newPost(post)
@@ -67,7 +99,7 @@ class NewsFeed extends Component {
                     value={this.state.addPost.text}
                     onKeyDown={(e)=>this._addPOST(e)}
                     onChange={(e)=>this.setState({
-                        addPost:{
+                        addPost:{...this.state.addPost, 
                             text: e.target.value
                         }
                     })}
@@ -82,7 +114,18 @@ class NewsFeed extends Component {
                         <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
                         <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
                         </svg>
-                       <span>Photo</span>
+                       <input 
+                        onClick={(e)=> {e.stopPropagation()
+                         return true}}
+                          type="file"
+                    /* id="image" */
+                           onChange={(e) => {this.setState({
+                            addPost:{...this.state.addPost, 
+                                image: e.target.files[0]}
+                    })
+                       console.log(e.target.files[0])}}
+                    />
+                    <label for='image'>Click me</label>
                 
                     </Button>
 
