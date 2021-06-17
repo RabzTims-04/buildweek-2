@@ -5,12 +5,14 @@ export class HomePutDel extends Component {
   state = {
     show: false,
     editPost: {
-      text: this.props.text,
-    },
-  };
+      text: this.props.text
+    }
+  }
 
   EditPost = async (e) => {
     e.preventDefault()
+    let formData = new FormData()
+    formData.set('post', this.state.editPost.image)
     const url =
       'https://striveschool-api.herokuapp.com/api/posts/' + this.props.id;
     const key =
@@ -18,15 +20,34 @@ export class HomePutDel extends Component {
     try {
       const response = await fetch(url, {
         method: 'PUT',
-        body: JSON.stringify(this.state.editPost),
+        body: JSON.stringify({text: this.state.editPost.text}),
         headers: {
           Authorization: key,
           'Content-type': 'application/json',
         },
       });
       const editNews = await response.json()
+      console.log(editNews);
       this.props.editNews(editNews);
       if (response.ok) {
+        if(this.state.editPost.image){
+          try {
+            const imgresp = await fetch(url,{
+                method:'POST',
+                body: formData,
+                headers:{
+                    'Authorization': key
+                }
+            })
+            console.log(imgresp);
+            const editimg = await imgresp.json()
+            console.log(editimg);
+            this.props.editimg(editimg)
+        } catch (error) {
+            console.log(error);
+            
+        }
+        }
         alert('edit done');
         this.setState({
           ...this.state,
@@ -100,10 +121,27 @@ export class HomePutDel extends Component {
                   type='text'
                   value={this.state.editPost.text}
                   onChange={(e) =>
-                    this.setState({ editPost: { text: e.target.value } })
+                    this.setState({ 
+                      editPost: {...this.state.editPost, text: e.target.value } 
+                    })
                   }
                   id='text'
                 />
+                <label className="p-0 d-flex mt-2" for="image">                                     
+                    <input 
+                        onClick={(e)=> {e.stopPropagation()
+                          return true}}  
+                          /* style={{display:'none'}} */
+                          type="file"
+                          id="image"
+                          /* id="image" */
+                          onChange={(e) => {this.setState({
+                            editPost:{...this.state.editPost, 
+                            image: e.target.files[0]}
+                          })
+                          console.log(e.target.files[0])}}
+                                />
+                         </label>
               </Form.Group>
               <Button
                 variant='primary'

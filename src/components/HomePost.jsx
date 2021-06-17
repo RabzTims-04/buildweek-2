@@ -6,7 +6,6 @@ import { Component, React } from 'react';
 class NewsFeed extends Component {
 
     state = {
-        show: false,
         addPost:{
         text:''
     }
@@ -70,7 +69,6 @@ class NewsFeed extends Component {
                 console.log('post',post);
                 this.props.newPost(post)
                 this.setState({
-                    ...this.state,
                     addPost:{
                         text:''
                 }
@@ -85,21 +83,6 @@ class NewsFeed extends Component {
         }
     }
     }
-
-    handleClose = () => {
-        this.setState({
-          ...this.state,
-          show: false,
-        });
-      };
-    
-      handleShow = () => {
-        this.setState({
-          ...this.state,
-          show: true,
-        });
-      };
-
 
     render() {
 
@@ -119,7 +102,6 @@ class NewsFeed extends Component {
                     value={this.state.addPost.text}
                     onKeyDown={(e)=>this._addPOST(e)}
                     onChange={(e)=>this.setState({
-                        ...this.state,
                         addPost:{...this.state.addPost, 
                             text: e.target.value
                         }
@@ -146,7 +128,6 @@ class NewsFeed extends Component {
                                     id="postimg"
                                 /* id="image" */
                                     onChange={(e) => {this.setState({
-                                        ...this.state,
                                         addPost:{...this.state.addPost, 
                                             image: e.target.files[0]}
                                 })

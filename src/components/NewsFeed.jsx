@@ -52,6 +52,16 @@ class NewsFeed extends Component {
             })
         }
 
+        editimg = (imgval)=>{
+            console.log('imgval', imgval);
+            const updatedRef = this.state.newsFeeds
+            const toUpdate = updatedRef.map(x=> x._id).indexOf(imgval._id)
+            updatedRef[toUpdate].image = imgval.image
+            this.setState({
+                newsFeeds: updatedRef
+            })
+        }
+
     newsFeedFetch = async()=>{
         const url = 'https://striveschool-api.herokuapp.com/api/posts/'
         const key= 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
@@ -113,7 +123,7 @@ class NewsFeed extends Component {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item><HomePutDel editNews={this.editNews} id={news._id} text={news.text} filter={this.filter}/></Dropdown.Item>
+                                <Dropdown.Item><HomePutDel image={news.image} editNews={this.editNews} id={news._id} editimg={this.editimg} text={news.text} filter={this.filter}/></Dropdown.Item>
                                 <Dropdown.Item><PostProfilePic id={news._id}/></Dropdown.Item>
                                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                             </Dropdown.Menu>
