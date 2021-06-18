@@ -137,11 +137,14 @@ class NewsFeed extends Component {
 
                     </div>  
                 </Container>                           
-                        
+                {news.image?       
                 <Card.Body className="pr-0 pl-0 pt-3"> 
                 {/* this.img.imgcover[i] */}
-                    <img src={news.image} alt="cover" className="img-fluid coverImg" />
+               
+                <img src={news.image} alt="cover" className="img-fluid coverImg" />
                 </Card.Body>
+                :<div></div>
+                  }
 
                 <Container>
                     <div className="d-flex flex-row comments-btn py-2">
