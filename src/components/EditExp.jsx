@@ -22,6 +22,9 @@ export class EditExp extends Component {
   };
 
   editExp = async (e) => {
+    let formData = new FormData()
+    formData.append('experience', this.state.editExp.image)
+    console.log('id',this.props.id);
     const url =
       'https://striveschool-api.herokuapp.com/api/profile/60c72233291930001560aba1/experiences/' +
       this.props.id;
@@ -30,16 +33,39 @@ export class EditExp extends Component {
     try {
       const response = await fetch(url, {
         method: 'PUT',
-        body: JSON.stringify(this.state.editExp),
+        body: JSON.stringify({role: this.state.editExp.role,
+                              company: this.state.editExp.company,
+                              startDate: this.state.editExp.startDate,
+                              endDate: this.state.editExp.endDate,
+                              description: this.state.editExp.description,
+                              area: this.state.editExp.area,}),
         headers: {
           Authorization: key,
           'Content-type': 'application/json',
         },
       });
       const editedExp = await response.json();
+      console.log(editedExp);
       this.props.editExp(editedExp);
       //console.log(editedExp);
       if (response.ok) {
+         if(this.state.editExp.image){
+          try {
+            const expResp = await fetch(url + '/picture',{
+              method:'POST',
+              body:formData,
+              headers:{
+                'Authorization':key
+              }
+            })
+            console.log('expresp', expResp);
+            const expData = await expResp.json()
+            console.log('expData',expData);            
+            
+          } catch (error) {
+             console.log(error);
+          }
+        } 
         alert('edit done');
         this.setState({
           ...this.state.editExp,
@@ -151,6 +177,21 @@ export class EditExp extends Component {
                   id='role'
                 />
               </Form.Group>
+              <label className="p-0 d-flex mt-2" for="image">                                     
+                    <input 
+                        onClick={(e)=> {e.stopPropagation()
+                          return true}}  
+                          /* style={{display:'none'}} */
+                          type="file"
+                          id="image"
+                          /* id="image" */
+                          onChange={(e) => {this.setState({
+                            editExp:{...this.state.editExp, 
+                            image: e.target.files[0]}
+                          })
+                          console.log(e.target.files[0])}}
+                                />
+                         </label>
 
               {/*   <Form.Group className='mb-3'>
                 <Form.Label className='text-muted'>Type *</Form.Label>

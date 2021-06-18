@@ -67,7 +67,7 @@ class Experience extends Component {
             console.log('data', experiences);
             if(response.ok){
                 this.setState({
-                    experiences
+                    experiences:experiences.reverse()
                 })
                 console.log('state',this.state.experiences);
             }
@@ -123,7 +123,7 @@ class Experience extends Component {
                             this.state.experiences.map((exp,i) => 
                                 <Col key={exp._id} className="d-flex p-0 mt-3">
                                     <Col sm={1} className="pr-0 pl-1">
-                                        <img src={this.img?.imglogo[i]} alt="logo" className=" img-fluid "/>
+                                        <img src={exp.image} alt="logo" className=" img-fluid "/>
                                     </Col> 
                                     <Col className="p-0 ml-4 " style={{borderBottom:'1px solid lightgrey'}}>
                                         <Link>
