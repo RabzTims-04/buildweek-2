@@ -1,12 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/messaging.css';
 //icons
 import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
 import MoreHorizOutlinedIcon from '@material-ui/icons/MoreHorizOutlined';
 import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
 
+import Chat from './Chat';
+
+import { Link } from 'react-router-dom';
+
 const Messaging = () => {
   const [messaging, setMessaging] = useState(false);
+  const [Profiles, setProfiles] = useState([]);
+  console.log(Profiles);
+  useEffect(() => {
+    fetch('https://striveschool-api.herokuapp.com/api/profile/', {
+      method: 'GET',
+      headers: {
+        authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3NmU1ZmMxOTMwNTAwMTU4NzE1MzIiLCJpYXQiOjE2MjM2ODI2NTUsImV4cCI6MTYyNDg5MjI1NX0.yfDyxz2SFLNJcumUS_JTMQcHGLFbh-etvTpyGhRMT6g',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => setProfiles(data.slice(22, 33)));
+  }, []);
   return (
     <div
       className='Messaging'
@@ -39,6 +56,11 @@ const Messaging = () => {
       <hr />
       <div className='messagin_body'>
         <input type='text' placeholder='Search messages' />
+        {Profiles.slice(0, 5).map((p) => (
+          <Link to={'/profile/' + p.name + '/' + p._id}>
+            <Chat p={p} />
+          </Link>
+        ))}
       </div>
     </div>
   );
