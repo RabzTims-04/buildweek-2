@@ -7,6 +7,7 @@ import Head from "./components/Navbar";
 import SecondNav from "./components/SecondNav"
 import Footer from "./components/Footer"
 import Home from './components/Home'
+import PostProfilePic from './components/PostProfilePic'
 
 function App() {
 
@@ -18,13 +19,15 @@ function App() {
 
   return (
  
-      <Router>
+      <Router> 
        
         <Head profilePic={img}/>
         <Route exact path ="/" component={SecondNav}/>
+        {/* <Route exact path ="/feed" component ={PostProfilePic}/>   */}     
         <Route exact path="/" render={(routerProps)=><Profile {...routerProps} profilePic={profile}/>}/>
-        <Route exact path ="/feed" render={(routerProps)=><Home {...routerProps} profilePic ={img} />}/>
+        <Route exact path ="/feed" render={(routerProps)=><Home {...routerProps} profilePic ={img} />}/>     
         <Route exact path ="/" component ={Footer}/>
+       
 
  
       </Router>

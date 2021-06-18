@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { Link } from 'react-router-dom'
 import HomePutDel from './HomePutDel'
+import PostProfilePic from './PostProfilePic';
 import { Container, Card, Col, Button, Dropdown } from 'react-bootstrap'
 import '../css/NewsFeed.css'
 
@@ -51,6 +52,16 @@ class NewsFeed extends Component {
             })
         }
 
+        editimg = (imgval)=>{
+            console.log('imgval', imgval);
+            const updatedRef = this.state.newsFeeds
+            const toUpdate = updatedRef.map(x=> x._id).indexOf(imgval._id)
+            updatedRef[toUpdate].image = imgval.image
+            this.setState({
+                newsFeeds: updatedRef
+            })
+        }
+
     newsFeedFetch = async()=>{
         const url = 'https://striveschool-api.herokuapp.com/api/posts/'
         const key= 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3MjIzMzI5MTkzMDAwMTU2MGFiYTEiLCJpYXQiOjE2MjM2NjMxNTYsImV4cCI6MTYyNDg3Mjc1Nn0.pHCHEeBWoL8ouo2bml9H3Ju13WPbylVyEqIpyeFhx1o'
@@ -62,7 +73,7 @@ class NewsFeed extends Component {
                 }
             })
             const data = await response.json()
-            const newsFeeds = await data.slice(-10)
+            const newsFeeds = await data.slice(-10).reverse()
             if(response.ok){
                 console.log(newsFeeds);
                 this.setState({
@@ -112,8 +123,8 @@ class NewsFeed extends Component {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu>
-                                <Dropdown.Item><HomePutDel editNews={this.editNews} id={news._id} text={news.text} filter={this.filter}/></Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
+                                <Dropdown.Item><HomePutDel image={news.image} editNews={this.editNews} id={news._id} editimg={this.editimg} text={news.text} filter={this.filter}/></Dropdown.Item>
+                                <Dropdown.Item><PostProfilePic id={news._id}/></Dropdown.Item>
                                 <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
@@ -128,7 +139,8 @@ class NewsFeed extends Component {
                 </Container>                           
                         
                 <Card.Body className="pr-0 pl-0 pt-3"> 
-                    <img src={this.img.imgcover[i]} alt="cover" className="img-fluid coverImg" />
+                {/* this.img.imgcover[i] */}
+                    <img src={news.image} alt="cover" className="img-fluid coverImg" />
                 </Card.Body>
 
                 <Container>

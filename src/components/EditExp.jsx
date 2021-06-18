@@ -90,6 +90,21 @@ export class EditExp extends Component {
       show: true,
     });
   };
+
+  ageFunc =(dataDate) =>{
+    /* let today = new Date('2021-02-13T00:00:00.000Z')
+    let date = today.getDate()
+    let month = today.getMonth()
+    let year = today.getFullYear()
+    console.log('fulldate',today);
+    console.log('date', date);
+    console.log('month', month);
+    console.log('year', year); */
+    let date = new Date(dataDate).toLocaleDateString("sq-AL",{ year: 'numeric', month: '2-digit', day: '2-digit' })
+    console.log('date',date);
+    return date
+}
+
   render() {
     return (
       <div>
@@ -174,7 +189,7 @@ export class EditExp extends Component {
                 <Form.Control
                   type='text'
                   id='startDate'
-                  value={this.state.editExp.startDate}
+                  value={this.ageFunc(this.state.editExp.startDate)}
                   onChange={(e) => this.StoreChange(e)}
                 />
               </Form.Group>
@@ -183,7 +198,7 @@ export class EditExp extends Component {
                 <Form.Control
                   type='text'
                   id='endDate'
-                  value={this.state.editExp.endDate}
+                  value={this.ageFunc(this.state.editExp.endDate)}
                   onChange={(e) => this.StoreChange(e)}
                 />
               </Form.Group>
