@@ -46,3 +46,29 @@
   span{
       color: grey;
   }
+button{
+    border:none;
+    background-color:white;
+    text-align: center;
+    margin-top: ;
+    margin-left: 10px;
+}
+/* #b1{
+    margin-left:25px;
+}
+#b3{
+    margin-left:25px;
+} */
+#NavprofilePhoto{
+    width:35px;
+}
+#b4{
+    margin-left:-10px;
+}
+#b5{
+    margin-left:-12px;
+    
+}
+#b6{
+    margin-top: 2px;
+}
