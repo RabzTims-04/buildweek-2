@@ -1,15 +1,17 @@
 
+
+
 import{ Card,Button,Form,FormControl, Container, Modal } from 'react-bootstrap'
 import'../css/HomePost.css'
 import { Component, React } from 'react';
 
 class NewsFeed extends Component {
-
-    state = {
-        addPost:{
-        text:''
-    }
-    }
+  state = {
+    addPost: {
+      text: '',
+    },
+  };
+  
 
     _addPOST = async (e)=>{
     
@@ -69,15 +71,14 @@ class NewsFeed extends Component {
                 console.log('post',post);
                 this.props.newPost(post)
                 this.setState({
-                    addPost:{
-                        text:''
-                }
+                  addPost: {
+                    text: '',
+                  },
                 })
-            }else{
+              }
+           else{
                 console.log('error')
-            }
-            
-
+            }    
         }catch(error){
             console.log(error);
         }
@@ -182,6 +183,7 @@ class NewsFeed extends Component {
           
         );
     }
+
 }
 
 export default NewsFeed;

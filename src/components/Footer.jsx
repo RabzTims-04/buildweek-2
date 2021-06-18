@@ -1,10 +1,10 @@
 import { Row, Col, Dropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import '../css/Footer.css';
 
 const Footer = () => {
   return (
-    <div className='container margin'>
+    <div className='container footer'>
       <Row>
         <Col>
           <img
@@ -59,7 +59,7 @@ const Footer = () => {
             <Link to=''>Advertising</Link>
           </div>
           <div>
-            <Link to="">Small Bussiness</Link>
+            <Link to=''>Small Bussiness</Link>
           </div>
         </Col>
         <Col sm={4} md={3} className='footerIcon'>

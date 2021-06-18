@@ -1,10 +1,9 @@
 import { Component } from 'react';
-import { Card, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Card, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import EditExp from './EditExp';
-import '../css/Experience.css'
+import '../css/Experience.css';
 import AddExpModal from './AddExpModal';
-
 
 class Experience extends Component {
 
@@ -96,11 +95,18 @@ class Experience extends Component {
     }
 
     addexp =(expval)=>{
-        this.setState({
-            experiences:[expval, ...this.state.experiences]
-        })
-    }
 
+        this.setState({
+          experiences,
+        });
+        //console.log('state', this.state.experiences);
+      } else {
+        console.log('error');
+      }
+    } catch (error) {
+      console.log(error);
+    }
+       
     render() {
 
         return (
@@ -144,6 +150,7 @@ class Experience extends Component {
                             :<p>Errror</p>}
 
                                  {/* <Col className="d-flex p-0 mt-3">
+
                                     <Col sm={1} className="pr-0 pl-1">
                                         <img src="https://media-exp1.licdn.com/dms/image/C4D0BAQHiNSL4Or29cg/company-logo_100_100/0/1519856215226?e=1631750400&v=beta&t=V4NBm-NohF2bjS1mrIlkZq3-gKb49SpeBtV80UPFSR8" alt="logo" className=" img-fluid "/>
                                     </Col> 
@@ -208,15 +215,13 @@ class Experience extends Component {
                                         </Link>
                                         <p className="mt-1">description</p>
                                     </Col>
-                                </Col>   */}                                
-                            </div>
-
-                        </Row> 
-
-                    </Card.Body>
-                </Card>
-        );
-    }
+                                </Col>   */}
+            </div>
+          </Row>
+        </Card.Body>
+      </Card>
+    );
+  }
 }
 
 export default Experience;
