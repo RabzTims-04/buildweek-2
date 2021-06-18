@@ -15,12 +15,6 @@ export class AddExp extends Component {
     },
   };
 
-  /* state={
-    addPost:{
-      text:''
-    }    
-  } */
-
   SaveExp = (e) => {
     let id = e.currentTarget.id;
     let Exp = { ...this.state.addExp };
@@ -28,37 +22,9 @@ export class AddExp extends Component {
     this.setState({ addExp: Exp });
   };
 
-  /*   addPost = async (e) =>{
-    const url =  'https://striveschool-api.herokuapp.com/api/posts/'
-    const key= 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MGM3ZTc3MmMxOTMwNTAwMTU4NzE1M2EiLCJpYXQiOjE2MjM3MTM2NTEsImV4cCI6MTYyNDkyMzI1MX0.6kKT4vCvBTj46C3FNIBAvTapwoNnxe5mwGFwd6vQd1U'
-    try {
-
-      const response = await fetch(url,{
-        method:'POST',
-        body:JSON.stringify(this.state.addPost),
-        headers:{
-          'Authorization':key,
-          'Content-type':'application/json'
-        }
-      })
-
-      const post = await response.json()
-      if(response.ok){
-        console.log(post);
-        this.setState({
-          text:''
-        })
-      }
-      else{
-        console.log('error');
-      }
-      
-    } catch (error) {
-      console.log(error);
-    }
-  } */
-
   addExp = async (e) => {
+    let formData = new FormData()
+    formData.append('experience', this.state.addExp.image)
     e.preventDefault();
     const url =
       'https://striveschool-api.herokuapp.com/api/profile/60c72233291930001560aba1/experiences';
@@ -68,15 +34,38 @@ export class AddExp extends Component {
       //console.log(this.state.addExp)
       const response = await fetch(url, {
         method: 'POST',
-        body: JSON.stringify(this.state.addExp),
+        body: JSON.stringify({
+          role:this.state.addExp.role,
+          company:this.state.addExp.company,
+          startDate:this.state.addExp.startDate,
+          endDate:this.state.addExp.endDate,
+          description:this.state.addExp.description,
+          area:this.state.addExp.area
+        }),
         headers: {
           Authorization: key,
           'Content-type': 'application/json',
         },
       });
       const addedExp = await response.json();
-
+      const id = await addedExp._id
+      console.log('postid', id);
       if (response.ok) {
+        if(this.state.addExp.image){
+          try {
+            const postimgresp = await fetch(url +'/' + id +'/picture',{
+              method:'POST',
+              body:formData,
+              headers:{
+                'Authorization': key
+            }
+            })
+            console.log(postimgresp);
+            
+          } catch (error) {
+            console.log('addpostimage error',error);
+          }
+        }
         this.props.addexp(addedExp);
         //console.log(addedExp);
         alert('Experience Added');
@@ -104,6 +93,21 @@ export class AddExp extends Component {
               id='role'
             />
           </Form.Group>
+          <label className="p-0 d-flex mt-2" for="image">                                     
+                    <input 
+                        onClick={(e)=> {e.stopPropagation()
+                          return true}}  
+                          /* style={{display:'none'}} */
+                          type="file"
+                          id="image"
+                          /* id="image" */
+                          onChange={(e) => {this.setState({
+                            addExp:{...this.state.addExp, 
+                            image: e.target.files[0]}
+                          })
+                          console.log(e.target.files[0])}}
+                                />
+                         </label>
 
           <Form.Group className='mb-4'>
             <Form.Label>Company *</Form.Label>

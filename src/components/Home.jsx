@@ -31,7 +31,7 @@ class Home extends Component {
 
           <Col lg={6} className='py-5 d-flex flex-column'>
             {/* Main */}
-            <div>
+            <div >
               {/* Hasham's POST method Component*/}
 
               <HomePost
