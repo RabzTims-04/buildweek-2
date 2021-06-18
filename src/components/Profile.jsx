@@ -21,11 +21,12 @@ class Profile extends Component {
       this.setState({
         profileData: editInfo,
       });
+      this.props.setprofiles(editInfo);
     }
   };
 
   componentDidUpdate = (prevProps, prevState) => {
-    console.log('state', prevState);
+    //console.log('state', prevState);
     if (
       prevState.profileData.name !== this.state.profileData.name ||
       prevState.profileData.surname !== this.state.profileData.surname ||
@@ -38,7 +39,7 @@ class Profile extends Component {
     ) {
       this.fetchData();
     } else {
-      console.log('not changed');
+      //console.log('not changed');
     }
   };
 
@@ -62,8 +63,8 @@ class Profile extends Component {
         this.setState({
           profileData: data,
         });
-        this.props.profilePic(this.state.profileData?.image)
-        console.log(this.state.profileData?.image);
+        this.props.profilePic(this.state.profileData?.image);
+        //console.log(this.state.profileData?.image);
       }
     } catch (error) {
       console.log(error);

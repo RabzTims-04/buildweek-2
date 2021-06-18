@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../css/PeopleAlsoViewed.css';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 const PeopleAlsoViewed = () => {
   const [Profiles, setProfiles] = useState([]);
   //console.log(Profiles);
@@ -13,7 +13,7 @@ const PeopleAlsoViewed = () => {
       },
     })
       .then((response) => response.json())
-      .then((data) => setProfiles(data.slice(0, 11)));
+      .then((data) => setProfiles(data.slice(22, 33)));
   }, []);
   return (
     <div className='people_also_viewed'>
@@ -22,9 +22,14 @@ const PeopleAlsoViewed = () => {
         <div className='profils_container' key={p._id}>
           <img src={p.image} alt={p.name + ' ' + p.surname} />
           <div className='profile_info'>
-            <Link to="">
-                <div className='name'>{p.name + ' ' + p.surname}</div>
-                <div className='speciality text-muted' style={{fontSize:'0.8em'}}>{p.title}</div>
+            <Link to={'/profile/' + p.name + '/' + p._id}>
+              <div className='name'>{p.name + ' ' + p.surname}</div>
+              <div
+                className='speciality text-muted'
+                style={{ fontSize: '0.8em' }}
+              >
+                {p.title}
+              </div>
             </Link>
             <button className='connect_button px-2 py-0 mt-1'>Connect</button>
           </div>

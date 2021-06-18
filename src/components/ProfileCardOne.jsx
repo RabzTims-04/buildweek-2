@@ -72,7 +72,7 @@ class ProfileCardOne extends Component {
     return (
       <Card className='rounded'>
         <Card.Img className='cardImg' variant='top' src={background} />
-        
+
 
                          <Link to="/">
                          <AiFillCamera className="camerabtn" style={{color:'blue', position:'absolute', right:'4%', top:'4%'}} size={20}/></Link>
@@ -189,17 +189,50 @@ class ProfileCardOne extends Component {
                                 </div>
                             </Col>
 
-                            <Col className="text-right" md={4}>
-                               <EditModal profileData={this.props.profileData} editInfo={this.props.editInfo}/>
-                            </Col>                              
-                        
-                        </Row>
+          <Row className='mb-4 justify-content-between'>
+            <Col md={8} className='d-flex flex-column cardBody mt-4'>
+              <h2>
+                {this.props.profileData.name} {this.props.profileData.surname}
+              </h2>
+              <span>{this.props.profileData.bio}</span>
+              <div className='d-inline mt-1'>
+                <span className='mr-2 text-muted'>
+                  {this.props.profileData.area} .
+                </span>
+                <Link to='' style={{ color: 'blue' }}>
+                  <span>Contact info</span>
+                </Link>
+              </div>
+              <Link to='' style={{ color: 'blue' }} className='mt-1'>
+                <p>19 connections</p>
+              </Link>
+              <div className='d-inline'>
+                <Button className='badge-pill btn1' variant='primary'>
+                  Open to
+                </Button>
+                <Button
+                  className='badge-pill mx-2 btn2'
+                  variant='outline-secondary'
+                >
+                  Add section
+                </Button>
+                <Button className='badge-pill btn3' variant='outline-secondary'>
+                  More
+                </Button>
+              </div>
+            </Col>
 
-                    </Card.Body>
-                </Card>
-                 );
-               }
-
-             }
+            <Col className='text-right' md={4}>
+              <EditModal
+                profileData={this.props.profileData}
+                editInfo={this.props.editInfo}
+              />
+            </Col>
+          </Row>
+        </Card.Body>
+      </Card>
+    );
+  }
+}
 
 export default ProfileCardOne;

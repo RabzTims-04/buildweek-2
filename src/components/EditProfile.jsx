@@ -17,10 +17,6 @@ class EditProfile extends Component {
     },
   };
 
-  componentDidMount = () => {
-    console.log(this.state.edit);
-  };
-
   handleChange = (e) => {
     let id = e.currentTarget.id;
     let info = { ...this.state.edit };
