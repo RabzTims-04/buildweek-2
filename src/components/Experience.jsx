@@ -41,6 +41,7 @@ class Experience extends Component {
 
     componentDidMount =()=>{
         this.experienceFetch()
+        
     }
 
       componentDidUpdate =(prevProps, prevState)=>{
@@ -80,9 +81,18 @@ class Experience extends Component {
         }
     }
 
-    ageFunc =(dob) =>{
-        let today = new Date(dob)
-        return today
+    ageFunc =(dataDate) =>{
+        /* let today = new Date('2021-02-13T00:00:00.000Z')
+        let date = today.getDate()
+        let month = today.getMonth()
+        let year = today.getFullYear()
+        console.log('fulldate',today);
+        console.log('date', date);
+        console.log('month', month);
+        console.log('year', year); */
+        let date = new Date(dataDate).toLocaleDateString("sq-AL",{ year: 'numeric', month: '2-digit', day: '2-digit' })
+        console.log('date',date);
+        return date
     }
 
     addexp =(expval)=>{
@@ -124,7 +134,7 @@ class Experience extends Component {
                                               
                                             </div>
                                             <p className="text-muted m-0">{exp.company}</p>
-                                            <p className="light-text  m-0">{exp.startDate}</p>
+                                            <p className="light-text  m-0">{this.ageFunc(exp.startDate)} - {this.ageFunc(exp.endDate)}</p>
                                             <p className="light-text  m-0">{exp.area}</p>                                            
                                         </Link>
                                         <p className="mt-1">{exp.description}</p>
