@@ -21,7 +21,7 @@
   padding-left: 10px;
 }
 .add_skills {
-  font-size: 19px;
+  font-size: 18px;
   padding-left: 10px;
 }
 .videos_container {
@@ -31,8 +31,8 @@
   border-bottom: 1px solid gray;
 }
 .video > img {
-  width: 120px;
-  height: 80px;
+  width: 100px;
+  height: 60px;
   z-index: 1;
   cursor: pointer;
 }

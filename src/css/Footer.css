@@ -1,50 +1,41 @@
-.margin{
-    margin: left 100px;
-     /* margin-right:120px;  */
-     
+.footer {
+  margin: 100px auto;
+  /* margin-right:120px;  */
 }
 
-a{
-    color: rgb(94, 91, 91) !important;
-    font-size:small;
-    font-weight:500;
+a {
+  color: rgb(94, 91, 91) !important;
+  font-size: small;
+  font-weight: 500;
 }
-a:hover{
-    color: rgb(67, 94, 201)!important;
-    decoration: underline;
+a:hover {
+  color: rgb(67, 94, 201) !important;
 }
-.copyRight{
-    margin-top:15px;
-    margin-bottom:15px;
-    font-size:10px;
-    color: rgb(103, 102, 102);
+.copyRight {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 10px;
+  color: rgb(103, 102, 102);
 }
-.footerIcon{
-    color: gray;
-    display:block;
-    margin-left: -55px;
-    margin-right: -35px;
-    
+.footerIcon {
+  color: gray;
+  display: block;
+  margin-left: -55px;
+  margin-right: -35px;
 }
-.language{
-    border: 2px solid gray;
-    
-    width:300px;
-    height: 30px;
- 
+.language {
+  width: 300px;
+  height: 30px;
 }
-.language:hover{
-    border: 2px solid rgb(67, 94, 201);
+
+#dropdown-basic {
+  font-size: 12px;
+  color: grey;
 }
-#dropdown-basic{
-    
-   font-size: 12px; 
-   color: grey;
-}
-.options{
-    font-size: 12px; 
-    color: grey;
-    background-color: lightgrey;
+.options {
+  font-size: 12px;
+  color: grey;
+  background-color: lightgrey;
 }
 /* Col{
     margin-left:-55px;
@@ -52,6 +43,3 @@ a:hover{
 .last-col{
     margin-left: -75px;
 } */
-
-
-

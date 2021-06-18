@@ -1,10 +1,15 @@
 import { Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
-import {Link, withRouter} from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom';
 import '../css/Head.css';
 
 const Head = (props) => {
   return (
-    <Navbar style={{zIndex:'10'}} expand='lg' id='navbar' className='fixed-top'>
+    <Navbar
+      style={{ zIndex: '10' }}
+      expand='lg'
+      id='navbar'
+      className='fixed-top'
+    >
       <Navbar.Brand href='#home' className='center'>
         <img
           src='./assets/img/linkdin.jpg'
@@ -19,7 +24,7 @@ const Head = (props) => {
       <Navbar.Toggle aria-controls='basic-navbar-nav' />
       <Navbar.Collapse id='basic-navbar-nav'>
         <Nav className='ml-auto'>
-          <Link to="/feed" className='menuText nav-link'>
+          <Link to='/' className='menuText nav-link'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='16'
@@ -94,9 +99,14 @@ const Head = (props) => {
             className='menuText pt-1'
             title={
               <>
-              <Link className="d-flex flex-column" to="/">
-                <img src={props.profilePic} alt="profile-pic" id="NavprofilePhoto" className="img-fluid"/>
-                {/* <svg
+                <Link className='d-flex flex-column' to='/profile'>
+                  <img
+                    src={props.profilePic}
+                    alt='profile-pic'
+                    id='NavprofilePhoto'
+                    className='img-fluid'
+                  />
+                  {/* <svg
                   xmlns='http://www.w3.org/2000/svg'
                   width='16'
                   height='16'
@@ -110,9 +120,9 @@ const Head = (props) => {
                     d='M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z'
                   />
                 </svg> */}
-                 </Link>
+                </Link>
                 <span>Me</span>
-             </>
+              </>
             }
             id='basic-nav-dropdown'
           >

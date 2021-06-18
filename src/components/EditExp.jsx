@@ -38,7 +38,7 @@ export class EditExp extends Component {
       });
       const editedExp = await response.json();
       this.props.editExp(editedExp);
-      console.log(editedExp);
+      //console.log(editedExp);
       if (response.ok) {
         alert('edit done');
         this.setState({
