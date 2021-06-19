@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/buildweek-2/static/css/main.901a6572.chunk.css",
+    "main.js": "/buildweek-2/static/js/main.c6954141.chunk.js",
+    "main.js.map": "/buildweek-2/static/js/main.c6954141.chunk.js.map",
+    "runtime-main.js": "/buildweek-2/static/js/runtime-main.317af64a.js",
+    "runtime-main.js.map": "/buildweek-2/static/js/runtime-main.317af64a.js.map",
+    "static/css/2.e4e35064.chunk.css": "/buildweek-2/static/css/2.e4e35064.chunk.css",
+    "static/js/2.b968bab0.chunk.js": "/buildweek-2/static/js/2.b968bab0.chunk.js",
+    "static/js/2.b968bab0.chunk.js.map": "/buildweek-2/static/js/2.b968bab0.chunk.js.map",
+    "static/js/3.abb9f8dd.chunk.js": "/buildweek-2/static/js/3.abb9f8dd.chunk.js",
+    "static/js/3.abb9f8dd.chunk.js.map": "/buildweek-2/static/js/3.abb9f8dd.chunk.js.map",
+    "index.html": "/buildweek-2/index.html",
+    "static/css/2.e4e35064.chunk.css.map": "/buildweek-2/static/css/2.e4e35064.chunk.css.map",
+    "static/css/main.901a6572.chunk.css.map": "/buildweek-2/static/css/main.901a6572.chunk.css.map",
+    "static/js/2.b968bab0.chunk.js.LICENSE.txt": "/buildweek-2/static/js/2.b968bab0.chunk.js.LICENSE.txt",
+    "static/media/backgroundCover.cf0b98c9.png": "/buildweek-2/static/media/backgroundCover.cf0b98c9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.317af64a.js",
+    "static/css/2.e4e35064.chunk.css",
+    "static/js/2.b968bab0.chunk.js",
+    "static/css/main.901a6572.chunk.css",
+    "static/js/main.c6954141.chunk.js"
+  ]
+}
